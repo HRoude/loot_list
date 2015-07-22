@@ -1,0 +1,4 @@
+Want-It is a personalized wish list for users. Users may give other permission to view their wish list and may form groups of friends or family that may view every group member's list.
+
+This application differs from other wish lists out there, as it includes personalized information including hobbies, charities, favorite vacation ideas and sports; what the user wants; and what the user absolutely does not want or dislikes.
+
