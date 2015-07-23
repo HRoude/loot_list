@@ -1,6 +1,8 @@
- <%= form_for(@user) do |f| %>
+
+<%= form_for(@user) do |f| %>
 <fieldset>
     <legend><b> Personalize all your information. The more you fill in, the more perfect your gifts will be!  </b></legend>
+    
     <div class="row"><br>
       <div class="col-md-6">
         <%= f.text_field :birthday, size: "60", class:'form-control' %>
@@ -18,10 +20,12 @@
         <b><%= f.label :general_dislikes, 'Dislikes?' %></b><br>
           <i> (For example if you cannot stand shopping at a partiular department store; cannot stand the color pink;<br> cannot stand a type of food; or cannot stand a genre of literature.  Be dislikeful!)</i><br><br>
 
-       <div class="actions">
+        <div class="actions">
         <%= f.submit %>
-       </div>
+        </div>
+
      </div>
     </div>
+    
     </fieldset>
     <% end %>

@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20150722150801) do
     t.string   "password_digest"
     t.string   "email"
     t.string   "user_name"
-    t.string   "birthday"
-    t.string   "current_interests"
-    t.string   "special_event"
-    t.string   "general_dislikes"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "birthday",          default: "(this left blank)"
+    t.string   "current_interests", default: "(this left blank)"
+    t.string   "special_event",     default: "(this left blank)"
+    t.string   "general_dislikes",  default: "(this left blank)"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
 end
