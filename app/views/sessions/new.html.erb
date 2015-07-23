@@ -1,18 +1,20 @@
 
-<div class="row">
+<div class="user_login">
 	<%= form_tag do %>
-		<fieldset>
-			<legend> Please Log In </legend>
-			<div class="col-md-4">
-				<%= label_tag :email, 'Your Email:' %>
-        <%= text_field_tag :email, params[:email], class:'form-control' %>
+	<fieldset>
+		<div class="row">
+		  <div class="col-md-4">
+			<%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
+            <%=label_tag :email, 'Your Email:' %><br>
 
-        <%= label_tag :password, 'Your Password:' %>
-        <%= text_field_tag :password, params[:password], class:'form-control' %>
-        <br>
-     		<%= submit_tag "Login" %>
-     	</div>
-		</fieldset>
+            <%=text_field_tag :password, params[:username], class:'form-control', size: 50 %>
+            <%=label_tag :password, 'Your Password:' %><br>
+          
+              <div class="actions">
+     			<%= submit_tag "Login" %>
+     		 </div>	
+     	  </div>
+        </div>	
+	</fieldset>
+	<% end %>	
 </div>
-
-<p> No account yet? <%= link_to "Register Here", new_user_path %></p>

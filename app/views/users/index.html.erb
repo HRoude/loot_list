@@ -1,5 +1,38 @@
 
-<h2> No Clue What is going here </h2>
+<h1> Welcome to Want-It! </h1><br><br>
+  <P> Just last week somewhere in this world, a wife asked her husband what he would like for his birthday.  Not expecting anything more than the usual response.....</P><br>
 
+  <p> This usual response is sweet and just what a wife wants to hear (not in this case!)....</p><br>
+
+  <p> Herein lies the perfect solution......private, secure, available to loved ones, family, friends....form groups...  Info always there and easily updated to</p><br>
+
+  <p> This is not just any wish list you find out there....more personalized.   It has vacation options, favorite activities, preferred charities and even what someone does NOT LIKE.....</p><br>
+
+<div class="user_form">
+  <%= form_for(@user) do |f| %>
+  <fieldset>
+    <legend><b> PLEASE REGISTER TO MAKE A NEW WISH LIST OR VIEW SOMEONE ELSE'S WISH LIST : </b></legend>
+    <div class="row"><br>
+      <div class="col-md-4">
+        <%= f.text_field :user_name, size: 60, class:'form-control' %>
+        <%= f.label :user_name, 'Your Name' %><br>
+
+        <%= f.text_field :email, size: 60, class:'form-control' %>
+         <%= f.label :email, 'Your Email' %><br>
+
+        <%= f.password_field :password, size: 60, class:'form-control' %>
+        <%= f.label :password, 'Your Password' %><br>
+
+        <%= f.password_field :password_confirmation, size: 60, class:'form-control' %>
+          <%= f.label :password_confirmation, 'Please Confirm Password' %><br>
+        <br>
+       <div class="actions">
+        <%= f.submit %>
+       </div>
+     </div>
+    </div>
+    </fieldset>
+  <% end %>
+</div>
 
 
