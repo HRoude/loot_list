@@ -9,12 +9,16 @@
     <div class="collapse navbar-collapse" id="something">
       <ul class="nav navbar-new">
         <% if session[:user_id].nil? %>
-          <a href="<%= login_path %>"> LOG IN </a>
+          <a><%= link_to "LOG IN", login_path %></a>
         <% else %>
           <a><%= @current_user.user_name %></a>
           <a><%= link_to "LOG OUT", logout_path, method: :delete %></a>
         <% end %>
-      </ul>    
+      </ul>
+
+      <ul>
+        <% link_to "USER PROFILE", user_path(@current_user) if session[:user_id] %>
+      </ul>  
     </div>
 
   </div>

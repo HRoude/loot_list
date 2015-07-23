@@ -1,0 +1,8 @@
+
+<ul>
+	<li><b> Email : </b><%= @current_user.email %></b> </li>
+ 	<li><b> Birthday : </b><%= @current_user.birthday %> </li>
+  <li><b> Current Interests : </b><%= "No current interests at this time" if @current_user.current_interests.blank? %> </li>
+  <li><b> Special Event : </b><%= "No special event at this time" if @current_user.special_event.blank? %> </li>
+  <li><b> Dislikes : </b><%= "There were no dislikes listed at this time" if @current_user.general_dislikes.blank? %> </li>
+</ul>
