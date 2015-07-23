@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
+	
+	skip_before_action :authorize, only: [:new, :create]
 
 	def index
 		@users = User.all 
+		@user = User.new
 	end
 
 	def new
@@ -9,9 +12,19 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(user_params)
-		redirect_to root_path
+		@user = User.create(user_params)
+			if @user.persisted?
+				flash[:success] = "Congratulations!  You have registered.  Please log in."
+			else
+				flash[:failure] = "Registration not successful.   Please try again."
+			end
+		redirect_to home_path
 	end
+
+	def show
+		@user = User.find(params[:id])
+	end
+
 
 
 	private
