@@ -1,8 +1,12 @@
 
-<ul>
-	<li><b> Email : </b><%= @current_user.email %></b> </li>
- 	<li><b> Birthday : </b><%= @current_user.birthday %> </li>
-  <li><b> Current Interests : </b><%= "No current interests at this time" if @current_user.current_interests.blank? %> </li>
-  <li><b> Special Event : </b><%= "No special event at this time" if @current_user.special_event.blank? %> </li>
-  <li><b> Dislikes : </b><%= "There were no dislikes listed at this time" if @current_user.general_dislikes.blank? %> </li>
-</ul>
+<div class="user-profile">
+	<ul>
+		<li><b> Email : </b><%= @current_user.email %></b> </li><br>
+	 	<li><b> Birthday : </b><%= @current_user.birthday %> </li><br>
+	  <li><b> Current Interests : </b><%= @current_user.current_interests %> </li><br>
+	  <li><b> Special Event : </b><%= @current_user.special_event %> </li><br>
+	  <li><b> Dislikes : </b><%= @current_user.general_dislikes%> </li><br><br>
+	</ul>
+</div>
+
+	

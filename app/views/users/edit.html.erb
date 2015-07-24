@@ -1,0 +1,7 @@
+
+
+<h2> <%= @current_user.user_name %> is logged in </h2>
+
+<%= render 'users/profile_edit' %>
+
+<br><a><%= link_to "YOUR PROFILE", user_path(@current_user) %></a><br>

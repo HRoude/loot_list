@@ -1,9 +1,6 @@
 
-<h2> <%= @current_user.user_name %> is logged in </h2>
-
-<%= render 'users/profile_edit' %>
-
 <h2> <%= @current_user.user_name %> current profile is </h2>
 
 <%= render 'users/profile' %>
 
+ <a><%= link_to "EDIT PROFILE", edit_user_path %></a>
