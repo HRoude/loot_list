@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   	def current_user
+      #session[:user_id] = nil        # TODO: remove bf deploy
   		if session[:user_id]
   			@current_user ||= User.find(session[:user_id])
   		else
