@@ -1,11 +1,12 @@
  <%= form_for(@user) do |f| %>
 <fieldset>
+  <div class="edit-user-profile">
     <legend><b> Personalize all your information. The more you fill in, the more perfect your gifts will be!  </b></legend>
     <div class="row"><br>
       <div class="col-md-6">
         <%= f.text_field :birthday, size: "60", class:'form-control' %>
         <b><%= f.label :birthday, 'Your Birthday (month and day)' %></b><br><br>
-                      <%# TODO:  add month/day fields to birthday %>
+              
         <%= f.text_area :current_interests, size: "80x10", maxlength: "100", class:'form-control' %>
         <b><%= f.label :current_interests, 'Your Current Interests' %></b><br>
          <i> (For example if you are involved in something special like volunteering at the animal shelter <br> or getting ready to go on a white water rafting vacation.  Be happy!)</i><br><br>
@@ -23,5 +24,9 @@
        </div>
      </div>
     </div>
-    </fieldset>
-    <% end %>
+    
+  </div>
+</fieldset>
+<% end %>
+
+

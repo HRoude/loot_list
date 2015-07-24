@@ -11,8 +11,7 @@
         <% if session[:user_id].nil? %>
           <a><%= link_to "LOG IN", login_path %></a>
         <% else %>
-          <a><%= @current_user.user_name %></a>
-          <a><%= link_to "LOG OUT", logout_path, method: :delete %></a>
+          <a><%= link_to "LOG OUT", logout_path, method: :delete %></a><br><br>
         <% end %>
       </ul>
 
