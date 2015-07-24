@@ -1,20 +1,24 @@
 
-<div class="user_login">
-	<%= form_tag do %>
-	<fieldset>
-		<div class="row">
-		  <div class="col-md-4">
-			<%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
-            <%=label_tag :email, 'Your Email:' %><br>
+<div class="user-login">
 
-            <%=text_field_tag :password, params[:username], class:'form-control', size: 50 %>
-            <%=label_tag :password, 'Your Password:' %><br>
-          
-              <div class="actions">
-     			<%= submit_tag "Login" %>
-     		 </div>	
-     	  </div>
-        </div>	
-	</fieldset>
-	<% end %>	
+<%= form_tag do %>
+
+<fieldset>
+    <div class="row">
+      <div class="col-md-4">
+    	<%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
+        <%=label_tag :email, 'Your Email:' %><br>
+
+        <%=text_field_tag :password, params[:username], class:'form-control', size: 50 %>
+        <%=label_tag :password, 'Your Password:' %><br>
+      
+          <div class="actions">
+    			<%= submit_tag "Login" %>
+    		 </div>	
+    	  </div>
+    </div>	
+</fieldset>
+
+<% end %>	
+
 </div>
