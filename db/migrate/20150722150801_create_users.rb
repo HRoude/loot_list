@@ -5,10 +5,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
       t.string :email
       t.string :user_name
-      t.string :birthday
-      t.string :current_interests
-      t.string :special_event
-      t.string :general_dislikes
+      t.string :birthday,           default: "(this left blank)"
+      t.string :current_interests,  default: "(this left blank)"
+      t.string :special_event,      default: "(this left blank)"
+      t.string :general_dislikes,   default: "(this left blank)"
 
       t.timestamps null: false
     end
