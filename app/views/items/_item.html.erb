@@ -6,9 +6,9 @@
 <fieldset>
    	<div class="row"><br>
       <div class="col-md-8">
-
       <b><%= f.label :item_name, 'Item Name' %></b><br>
-      <%= f.text_field :item_name, size: "82", class:'form-control' %><br><br>
+      <i> (This must be completed!)</i><br>  
+      <%= f.text_field :item_name, size: "82", class:'form-control' %><br><br>   <%# TODO: new item force form blank - edit shows info %>
       
       <b><%= f.label :descrip, 'Item Description' %></b><br>
       <i> (Product details from manufacturer)</i><br>      

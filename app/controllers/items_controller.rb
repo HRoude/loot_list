@@ -11,8 +11,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-  	@item = current_user.items.create(item_params)
-	    if @item.valid?
+  	@item = current_user.items.create!(item_params)
+	    if @item.persisted?
 	      redirect_to user_item_path(@current_user, @item), notice: "#{@item.item_name} has been added to your Want-It list."
 	    else
 	      render 'new'
