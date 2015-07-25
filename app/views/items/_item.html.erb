@@ -1,0 +1,45 @@
+
+<div class="new-item">
+
+<%= form_for([@current_user, @item]) do |f| %>
+
+<fieldset>
+   	<div class="row"><br>
+      <div class="col-md-8">
+
+      <b><%= f.label :item_name, 'Item Name' %></b><br>
+      <%= f.text_field :item_name, size: "82", class:'form-control' %><br><br>
+      
+      <b><%= f.label :descrip, 'Item Description' %></b><br>
+      <i> (Product details from manufacturer)</i><br>      
+      <%= f.text_area :descrip, size: "80x8", maxlength: "100", class:'form-control' %><br><br>
+
+      <b><%= f.label :comment, 'Comments' %></b><br>
+      <i> (What size?  Color?  What details you do NOT want in this item?)</i><br>
+      <%= f.text_area :comment, size: "80x8", maxlength: "100",class:'form-control' %><br><br>
+
+      <b><%= f.label :price, 'Estimated Price' %></b><br>
+      <i> (Just a general idea of the cost)</i><br>
+      <%= f.text_field :price, size: "82", class:'form-control' %><br><br>
+      
+      <b><%= f.label :url_link, 'Web Link' %></b><br>   <%# TODO:  add href to link %>
+      <i> (Copy and Paste weblink from the item you want to here)</i><br>
+      <%= f.text_area :url_link, size: "80x8", maxlength: "300", class:'form-control' %><br><br>
+      
+      <b><%= f.label :category, 'Item Category' %></b><br>  <%# TODO: change categor input %>
+      <i> (Look at category list below add to your item.  Please separate by commas)</i><br>
+      <%= f.text_area :category, size: "80x6", class:'form-control' %><br><br>
+      
+      <b><%= f.label :want_rating, 'Rate Item' %></b><br>
+      <i> (Rate how much you want this item. <br>On a scale of 1 to 5, with 5 being a MUST HAVE IT!)</i><br>
+      <%= f.text_field :want_rating, size: "60", class:'form-control' %><br><br><br>
+      
+       <div class="actions">
+        <%= f.submit %>
+       </div>
+      </div>
+    </div>
+</fieldset>
+
+</div>
+<% end %><br>

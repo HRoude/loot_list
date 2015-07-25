@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 root 'users#index', as: :home
   
-resources  :users
-
-resources  :items
+resources  :users do
+  resources  :items 
+end
 
 get 'login' => 'sessions#new', as: :login
 post 'login' => 'sessions#create' 
