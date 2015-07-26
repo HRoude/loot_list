@@ -21,17 +21,20 @@ class ItemsController < ApplicationController
 
   def edit
   	@item = current_user.items.find(params[:id])
+  	@user = current_user
   end
 
   def update
-  	# @item = Item.find(params[:id])
-  	# @item.update(item_params)
-		@item = current_user.items.find(params[:id]).update
-		redirect_to users_items_path(current_user)
+  	# @item = Item.find(params[:id])  
+  	# can use items as collection as defined in model
+		@item = current_user.items.find(params[:id]).update(item_params)
+		redirect_to user_items_path(current_user)
   end
 
-  def delete
-
+  def destroy
+  	@item = current_user.items.find(params[:id])
+  	@item.destroy
+  	redirect_to user_items_path(current_user)
   end
 
   private

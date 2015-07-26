@@ -1,6 +1,6 @@
 
-<%#  TODO:  find a particular item to edit %>
+<h3><%= link_to 'Delete This Item', user_item_path(@user, @item), method: :delete, data: { confirm: 'Are you sure?' } %></h3>
 
-<h2> Edit Item </h2>
+<h2> Edit This Item </h2>
 
 <%= render 'items/item' %>

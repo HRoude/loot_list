@@ -1,0 +1,42 @@
+
+<div class="row"><br>
+  <div class="col-md-4">
+		<div class="user-want-list">
+			<head>
+				<style> table, th, td {
+					    		border: 1px solid black;
+					    		border-collapse: collapse;}
+								th, td {
+					    		padding: 5px;}
+				</style>
+			</head>
+			<body>
+				<table style="width:100%">
+				  <tr>
+				    <th> Item Name </th>
+				    <th> Description </th>		
+				    <th> Personal Comments </th>
+				    <th> Estimated Cost </th>
+				    <th> Web Link </th>
+				    <th> Category </th>
+				    <th> Want Rating <br>		
+				    	<span style="font-weight:normal; font-size:70%;"><i>(5 being a<br>MUST HAVE!)</i></span></th>
+				  </tr>
+				  <% @current_user.items.each do |want| %>
+				  <tr>
+				    <td> <%= link_to want.item_name, edit_user_item_path(@current_user, want) %> </td>    <%# TODO: restrict only user can edit their item %>
+				    <td> <%= want.descrip %> </td>		
+				    <td> <%= want.comment %> </td>		
+				   	<td> <%= want.price %> </td>	
+				   	<td> <%= link_to want.url_link, want.url_link, :target => "_blank" %> </td>		
+				   	<td> <%= want.category %> </td>
+				   	<td> <%= want.want_rating %> </td>	
+				  </tr>
+				  <% end %>
+				</table><br><br>
+			</body>
+		</div> 
+	</div>
+</div>
+
+
