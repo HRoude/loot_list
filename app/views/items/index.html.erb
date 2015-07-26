@@ -1,6 +1,10 @@
 
 <h2> <%= @current_user.user_name %>'s Want-It List </h2>
 
+<p> Click on each Item Name if you want to edit this item. </p>
+
+<%= render 'items/index' %>
+
 <a><%= link_to "ADD TO WANT-IT LIST", new_user_item_path %></a><br><br>
 
 
