@@ -19,8 +19,9 @@
 				    <th> Estimated Cost </th>
 				    <th> Web Link </th>
 				    <th> Category </th>
-				    <th> Want Rating <br>		
+				    <th> Want Rating <br>	
 				    	<span style="font-weight:normal; font-size:70%;"><i>(5 being a<br>MUST HAVE!)</i></span></th>
+				    <th> Got It?</th><br>		
 				  </tr>
 				  <% @current_user.items.each do |want| %>
 				  <tr>
@@ -30,7 +31,14 @@
 				   	<td> <%= want.price %> </td>	
 				   	<td> <%= link_to want.url_link, want.url_link, :target => "_blank" %> </td>		
 				   	<td> <%= want.category %> </td>
-				   	<td> <%= want.want_rating %> </td>	
+				   	<td> <%= want.want_rating %> </td>
+				   	<td> 
+							<div class="btn-recevied">
+							  <button type="button" class="btn btn-primary">
+							    Item Received <span class="caret"></span>
+							  </button>     <%# TODO:  this button goes no where! %>
+							</div>
+						</td>	
 				  </tr>
 				  <% end %>
 				</table><br><br>
