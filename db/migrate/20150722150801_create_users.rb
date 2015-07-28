@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :group_id
       t.string :password_digest
       t.string :email
-      t.string :user_name
+      t.string :name
       t.string :birthday,           default: "(left blank)"
       t.string :current_interests,  default: "(left blank)"
       t.string :special_event,      default: "(left blank)"

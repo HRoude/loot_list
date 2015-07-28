@@ -2,12 +2,12 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">  <!-- better mobile display -->
     <div class="navbar-header">     
-      <a class="navbar-brand" href="<%= home_path %>"> <%= image_tag "gift-box.png", align: "left", size: "25x25", alt: "Want-It", style: "padding-right: 15px; padding-top: 15px; padding-left: 15px;" %> </a>
+      <%= link_to '<span class="glyphicon glyphicon-gift"></span> HOME'.html_safe, home_path, method: :get, class: 'btn btn-default btn-md' %> <br><br>   
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
 
     <div class="collapse navbar-collapse" id="something">
-      <ul class="nav navbar-new">
+      <ul class="nav navbar-new"><br><br>
         <% if session[:user_id].nil? %>
           <a><%= link_to "LOG IN", login_path %></a>
         <% else %>

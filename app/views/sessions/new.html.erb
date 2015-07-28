@@ -6,18 +6,20 @@
 <fieldset>
     <div class="row">
       <div class="col-md-4">
-    	<%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
-        <%=label_tag :email, 'Your Email:' %><br>
+    	  <%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
+        <%=label_tag :email, 'Your Email' %><br><br>
 
         <%=text_field_tag :password, params[:username], class:'form-control', size: 50 %>
-        <%=label_tag :password, 'Your Password:' %><br>
+        <%=label_tag :password, 'Your Password' %><br><br>
       
           <div class="actions">
     			<%= submit_tag "Login" %>
-    		 </div>	
-    	  </div>
+    	  </div>  	
+      </div>
     </div>	
 </fieldset>
+
+<p> Not a registered user?  <%= link_to 'Register', home_path %></p>
 
 <% end %>	
 
