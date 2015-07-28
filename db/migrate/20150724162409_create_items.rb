@@ -2,7 +2,7 @@ class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
       t.integer :user_id
-      t.string  :item_name
+      t.string  :name
       t.string  :descrip
       t.string  :comment
       t.float   :price

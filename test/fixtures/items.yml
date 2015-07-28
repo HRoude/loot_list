@@ -2,7 +2,7 @@
 
 one:
   user_id: 1
-  item_name: MyString
+  name: MyString
   descrip: MyString
   comment: MyString
   price: 1.5
@@ -12,7 +12,7 @@ one:
 
 two:
   user_id: 1
-  item_name: MyString
+  name: MyString
   descrip: MyString
   comment: MyString
   price: 1.5

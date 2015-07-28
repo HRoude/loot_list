@@ -4,7 +4,7 @@ one:
   group_id: 1
   password_digest: MyString
   email: MyString
-  user_name: MyString
+  name: MyString
   birthday: MyString
   current_interests: MyString
   special_event: MyString
@@ -14,7 +14,7 @@ two:
   group_id: 1
   password_digest: MyString
   email: MyString
-  user_name: MyString
+  name: MyString
   birthday: MyString
   current_interests: MyString
   special_event: MyString

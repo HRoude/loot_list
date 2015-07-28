@@ -86,8 +86,19 @@ border: red;
  border: yellow;
 }
 
-.btn-group {
-color: black;
-background-color: blue;
-border: blue;
+.want-it-table {
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 5px;	
+	}
 }
+
+.centered-text {
+text-align:center
+}
+
+
+
+
+
