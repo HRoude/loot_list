@@ -1,9 +1,11 @@
 
-<h2> <%= @current_user.name %> current profile is </h2>
+<h2> <%= @user.name %> current profile is </h2>
 
 <%= render 'users/profile' %>
 
- <a><%= link_to "EDIT PROFILE", edit_user_path %></a><br><br>
+<% if @current_user.id == @user.id %>
+  <a><%= link_to "EDIT PROFILE", edit_user_path %></a><br><br>
+<% end %>
 
  <a><%= link_to "WANT-IT LIST", user_items_path(@user) %></a><br><br>
 

@@ -3,4 +3,6 @@
 
 <%= render 'items/form' %>
 
-<a><%= link_to "EDIT WANT-IT LIST", user_items_path %></a><br><br>
+<% if @current_user.id == @user.id %>
+  <a><%= link_to "EDIT WANT-IT LIST", user_items_path %></a><br><br>
+<% end %>

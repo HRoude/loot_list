@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 	end									## TODO:  get flashes to fade or timeout
 
 	def show
-		@user = current_user
+		@user = User.find(params[:id])
 	end
 
 	def edit

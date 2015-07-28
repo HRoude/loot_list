@@ -20,7 +20,13 @@
 				  </tr>
 				  <% @user.items.each do |want| %>
 				  <tr>
-				    <td> <%= link_to want.name, edit_user_item_path(@user, want) %> </td>    <%# TODO: restrict only user can edit their item %>
+				    <td> 
+				    	<% if @current_user.id == @user.id %>
+  				    	<%= link_to want.name, edit_user_item_path(@user, want) %> 
+  				    <% else %>
+  				    	<%= want.name %>
+  				    <% end %>	
+  				  </td>    
 				    <td> <%= want.descrip %> </td>		
 				    <td> <%= want.comment %> </td>		
 				   	<td> <%= number_to_currency(want.price) %> </td>	
@@ -29,7 +35,9 @@
 				   	<td> <%= want.want_rating %> </td>
 				   	<td> 
 							<div>
-								<%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-success btn-md' %>							
+								<% if @current_user.id == @user.id %>
+								  <%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-success btn-md' %>							
+			          <% end %>							
 							</div>   
 			
 

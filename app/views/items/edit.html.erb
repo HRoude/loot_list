@@ -1,8 +1,9 @@
 
 <div class="text-right">
 
+<% if @current_user.id == @user.id %>
 	<h4><%= link_to 'Delete This Item', user_item_path(@user, @item), method: :delete, data: { confirm: 'Are you sure?' } %></h4>
-
+<% end %>
 
 </div>
 
