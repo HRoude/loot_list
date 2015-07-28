@@ -2,40 +2,69 @@ class ItemsController < ApplicationController
   
   def index
     @user = User.find(params[:user_id])
-    @item = current_user.items.all
+    @item = @user.items.all
   end
     
   def new
-    @user = current_user
-    @item = current_user.items.new
+    @user = User.find(params[:user_id])
+    @item = @user.items.new
+    if current_user.id != @item.user_id
+      flash[:notice] = 'Not authorized to add an item to this item'
+      redirect_to user_items_path
+    end 
   end
 
   def create
-    @item = current_user.items.create!(item_params)
-    if @item.persisted?
-      redirect_to user_items_path(@current_user), notice: "#{@item.name} has been added to your Want-It list."
+    @user = User.find(params[:user_id])
+    @item = @user.items.new
+    if current_user.id != @item.user_id
+      flash[:notice] = 'Not authorized to add an item to this list'
+      redirect_to user_items_path
     else
-      render 'new'
-    end
+    @item.create!(item_params)  
+      if @item.persisted?
+        redirect_to user_items_path(@current_user), notice: "#{@item.name} has been added to your Want-It list."
+      else
+        render 'new'
+      end
+    end  
   end
 
   def edit
-    @item = current_user.items.find(params[:id])
-    @user = current_user
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    if current_user.id != @item.user_id
+      flash[:notice] = 'Not authorized to edit this item'
+      redirect_to user_items_path
+    else  
+      @user = current_user
+    end  
   end
 
   def update
-    # @item = Item.find(params[:id])  
-    # can use items as collection as defined in model
-    @item = current_user.items.find(params[:id]).update(item_params)
-    redirect_to user_items_path(current_user)
+    # @item = Item.find(params[:id])  can use items as collection as defined in model
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    if current_user.id != @item.user_id
+      flash[:notice] = 'Not authorized to edit this item'
+      redirect_to user_items_path
+    else
+      @item.update(item_params)
+      redirect_to user_items_path
+    end
   end
 
   def destroy
-    @item = current_user.items.find(params[:id])
-    @item.destroy
-    redirect_to user_items_path(current_user)
-  end
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    if current_user.id != @item.user_id
+      flash[:notice] = 'Not authorized to delete this item'
+      redirect_to user_items_path
+    else
+      @item.destroy
+      redirect_to user_items_path
+    end
+  end  
 
   private
 

@@ -18,9 +18,9 @@
 				    	<span style="font-weight:normal; font-size:70%;" ><i>(5 being a<br>MUST HAVE!)</i></span></th>
 				    <th> Got It?</th><br>		
 				  </tr>
-				  <% @current_user.items.each do |want| %>
+				  <% @user.items.each do |want| %>
 				  <tr>
-				    <td> <%= link_to want.name, edit_user_item_path(@current_user, want) %> </td>    <%# TODO: restrict only user can edit their item %>
+				    <td> <%= link_to want.name, edit_user_item_path(@user, want) %> </td>    <%# TODO: restrict only user can edit their item %>
 				    <td> <%= want.descrip %> </td>		
 				    <td> <%= want.comment %> </td>		
 				   	<td> <%= number_to_currency(want.price) %> </td>	
