@@ -20,7 +20,7 @@
 
       <b><%= f.label :price, 'Estimated Price' %></b>
       <i> (Just a general idea of the cost)</i><br>
-      <%= f.number_field :price, size: "82", class:'form-control' %><br>
+      <%= f.number_field :price, size: "82", step:"any", min:"0", class:'form-control' %><br>
 
 
       <b><%= f.label :url_link, 'Web Link' %></b>   

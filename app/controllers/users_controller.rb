@@ -23,16 +23,24 @@ class UsersController < ApplicationController
 	end									## TODO:  get flashes to fade or timeout
 
 	def show
-		@user = current_user
+		@user = User.find(params[:id])
 	end
 
 	def edit
-		@user = current_user
+		@user = User.find(params[:id])
+		if current_user.id != @user.id
+			flash[:notice] = 'Not authorized to edit this profile'
+      redirect_to user_path
+    end 
 	end
 
 	def update
-		@user = current_user
-		@user.update(user_params)
+		@user = User.find(params[:id])
+		if current_user.id != @user.id
+			flash[:notice] = 'Not authorized to edit this profile'
+    else 
+			@user.update(user_params)
+		end
 		redirect_to user_path
 	end
 
