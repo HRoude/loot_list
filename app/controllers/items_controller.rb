@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
     
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])   
     @item = @user.items.new
     if current_user.id != @item.user_id
       flash[:notice] = 'Not authorized to add an item to this item'
@@ -17,16 +17,16 @@ class ItemsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @item = @user.items.new
-    if current_user.id != @item.user_id
+    if current_user.id == @item.user_id
+      @item = @user.items.create!(item_params)  
+        if @item.persisted?
+          redirect_to user_items_path, notice: "#{@item.name} has been added to your Want-It list."
+        else
+          render 'new'
+        end
+    else  
       flash[:notice] = 'Not authorized to add an item to this list'
       redirect_to user_items_path
-    else
-    @item.create!(item_params)  
-      if @item.persisted?
-        redirect_to user_items_path(@current_user), notice: "#{@item.name} has been added to your Want-It list."
-      else
-        render 'new'
-      end
     end  
   end
 
