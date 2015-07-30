@@ -17,6 +17,13 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+/*.background-image {
+	 margin: 0;
+	 background: url('../hand_holding_box.png');
+	 background-size: 100% auto;
+	 background-repeat:no-repeat;
+} */
+
 .item-category {
 	columns: 4;
 	-webkit-columns: 4;
@@ -27,9 +34,17 @@
 	padding-left: 5%;
 	padding-right: 5%;
 	}
+
 .yield{
 	margin: auto;
 	width: 90%;
+}
+
+.btn-default{
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
 }
 
 .success {

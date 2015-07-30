@@ -13,14 +13,15 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.create(user_params)
-			if @user.persisted?
-				flash[:success] = "Congratulations!  You have registered.  Please log in."
-				redirect_to user_path(@user)
-			else
-				flash[:failure] = "Registration not successful.   Please try again."
-				redirect_to home_path
-			end						## TODO: specific error message / params on email/username
-	end									## TODO:  get flashes to fade or timeout
+		if @user.persisted?
+			UserMailer.welcome_email(@user).deliver_now
+			flash[:success] = "Congratulations!  You have registered.  Please log in."
+			redirect_to user_path(@user)
+		else
+			flash[:failure] = "Registration not successful.   Please try again."
+			redirect_to home_path
+		end						## TODO: specific error message / params on email/username
+	end								
 
 	def show
 		@user = User.find(params[:id])
