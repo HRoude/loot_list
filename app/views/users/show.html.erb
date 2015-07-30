@@ -4,8 +4,13 @@
 <%= render 'users/profile' %>
 
 <% if @current_user.id == @user.id %>
-  <a><%= link_to "EDIT PROFILE", edit_user_path, class: 'btn btn-default btn-sm' %></a><br><br>
+  <%= link_to "EDIT PROFILE", edit_user_path, class: 'btn btn-default btn-sm' %><br><br>
 <% end %>
 
- <a><%= link_to "WANT-IT LIST", user_items_path(@user), class: 'btn btn-default btn-sm' %></a><br><br>
+<%= link_to "WANT-IT LIST", user_items_path(@user), class: 'btn btn-default btn-sm' %><br><br>
+
+<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
+
+<%= link_to "EDIT YOUR GROUP", edit_group_path, class: 'btn btn-default btn-sm' %><br><br>
+  <%# TODO:  this goes now where! %>
 

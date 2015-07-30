@@ -3,10 +3,12 @@ class User < ActiveRecord::Base
 	has_secure_password
 	before_create { generate_token(:password_reset_token) }
 	
-	validates_presence_of :name, :email, :password_digest
+	validates_presence_of 	:name, :email, :password_digest
 	validates_uniqueness_of :name, :email
 	
 	has_many :items
+	#has_many :group_memberships
+	has_many :groups#, through: => :group_memberships
 
 	def generate_token(column)
     begin
