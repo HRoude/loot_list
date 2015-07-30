@@ -34,7 +34,7 @@ Rails.application.configure do
     :enable_starttls_auto =>  true
   }
 
-
+  config.action_mailer.default_url_options = { :host => "http://want-it.herokuapp.com" }
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
