@@ -7,7 +7,7 @@
 <%= render 'items/index' %>
 
 <% if @current_user.id == @user.id %>
-	<a><%= link_to "ADD TO WANT-IT LIST", new_user_item_path %></a><br><br>
+	<a><%= link_to "ADD TO WANT-IT LIST", new_user_item_path, class: 'btn btn-default btn-sm' %></a><br><br>
 <% end %>
 
 

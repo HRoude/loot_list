@@ -1,53 +1,50 @@
 
-<div class="row"><br>
-  <div class="col-md-4">
-		<div class="user-want-list">
-			<head>
-				<style class="want-it-table"> </style>
-			</head>
-			<body>
-				<table class="table table-bordered table-striped table-responsive">
-				  <tr>
-				    <th> Item Name </th>
-				    <th> Description </th>		
-				    <th> Personal Comments </th>
-				    <th> Estimated Cost </th>
-				    <th> Web Link </th>
-				    <th> Category </th>
-				    <th> Want Rating <br>	
-				    	<span style="font-weight:normal; font-size:70%;" ><i>(5 being a<br>MUST HAVE!)</i></span></th>
-				    <th> Got It?</th><br>		
-				  </tr>
-				  <% @user.items.each do |want| %>
-				  <tr>
-				    <td> 
-				    	<% if @current_user.id == @user.id %>
-  				    	<%= link_to want.name, edit_user_item_path(@user, want) %> 
-  				    <% else %>
-  				    	<%= want.name %>
-  				    <% end %>	
-  				  </td>    
-				    <td> <%= want.descrip %> </td>		
-				    <td> <%= want.comment %> </td>		
-				   	<td> <%= number_to_currency(want.price) %> </td>	
-				   	<td> <%= link_to want.url_link, want.url_link, :target => "_blank" %> </td>		
-				   	<td> <%= want.category %> </td>
-				   	<td> <%= want.want_rating %> </td>
-				   	<td> 
-							<div>
-								<% if @current_user.id == @user.id %>
-								  <%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-success btn-md' %>							
-			          <% end %>							
-							</div>   
-			
+<head>
+	<style class="want-it-table"> </style>
+</head>
+<body>
+	<div class="user-want-list table-responsive">
+		<table class="table table-bordered table-striped">
+		  <tr>
+		    <th> Item Name </th>
+		    <th> Description </th>		
+		    <th> Personal Comments </th>
+		    <th> Estimated Cost </th>
+		    <th> Web Link </th>
+		    <th> Category </th>
+		    <th> Want Rating <br>	
+		    	<span style="font-weight:normal; font-size:70%;" ><i>(5 being a<br>MUST HAVE!)</i></span></th>
+		    <th> Got It?</th><br>		
+		  </tr>
+		  <% @user.items.each do |want| %>
+		  <tr>
+		    <td> 
+		    	<% if @current_user.id == @user.id %>
+			    	<%= link_to want.name, edit_user_item_path(@user, want) %> 
+			    <% else %>
+			    	<%= want.name %>
+			    <% end %>	
+			  </td>    
+		    <td> <%= want.descrip %> </td>		
+		    <td> <%= want.comment %> </td>		
+		   	<td> <%= number_to_currency(want.price) %> </td>	
+		   	<td> <%= link_to want.url_link, want.url_link, :target => "_blank" %> </td>		
+		   	<td> <%= want.category %> </td>
+		   	<td> <%= want.want_rating %> </td>
+		   	<td> 
+					<div>
+						<% if @current_user.id == @user.id %>
+						  <%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-success btn-sm' %>							
+	          <% end %>							
+					</div>   
+				</td>	
+		  </tr>
+		  <% end %>
+		</table><br>
+	</div> 
+</body>
 
-						</td>	
-				  </tr>
-				  <% end %>
-				</table><br>
-			</body>
-		</div> 
-	</div>
-</div>
+
+
 
 

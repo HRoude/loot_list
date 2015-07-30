@@ -3,6 +3,6 @@
 
 <%= render 'users/profile_edit' %>
 
-<br><a><%= link_to "YOUR PROFILE", user_path(@current_user) %></a><br>
+<br><%= link_to "YOUR PROFILE", user_path(@current_user), class: 'btn btn-default btn-sm' %><br>
 
-<br><a><%= link_to "HOME", home_path %></a><br>
+<br><%= link_to "HOME", home_path, class: 'btn btn-default btn-sm' %><br>

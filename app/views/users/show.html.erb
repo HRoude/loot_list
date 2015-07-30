@@ -4,8 +4,8 @@
 <%= render 'users/profile' %>
 
 <% if @current_user.id == @user.id %>
-  <a><%= link_to "EDIT PROFILE", edit_user_path %></a><br><br>
+  <a><%= link_to "EDIT PROFILE", edit_user_path, class: 'btn btn-default btn-sm' %></a><br><br>
 <% end %>
 
- <a><%= link_to "WANT-IT LIST", user_items_path(@user) %></a><br><br>
+ <a><%= link_to "WANT-IT LIST", user_items_path(@user), class: 'btn btn-default btn-sm' %></a><br><br>
 
