@@ -14,6 +14,8 @@ end
 
 patch 'update_user' => 'users#update', as: :update_user
 
+resources :groups
+
 end
   
   # The priority is based upon order of creation: first created -> highest priority.

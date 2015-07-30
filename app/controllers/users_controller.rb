@@ -45,8 +45,6 @@ class UsersController < ApplicationController
 		redirect_to user_path
 	end
 
-	def delete
-	end
 
 	private
 
