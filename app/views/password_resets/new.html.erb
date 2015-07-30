@@ -1,0 +1,16 @@
+
+<h2> Reset Password </h2>
+
+<%= form_tag password_resets_path, :method => :post do %>
+<fieldset>
+<div class="row col-md-4">
+  <div class="field">
+    <%= label_tag :email, 'Your Email' %><br>
+    <%= text_field_tag :email, params[:email], class:'form-control', size: 60  %><br>
+  </div>
+  <div class="actions">
+  	<%= submit_tag "Reset Password"  %>
+  </div>
+</div>  
+</fieldset>
+<% end %>
