@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
+get 'login' => 'sessions#new', as: :login
+post 'login' => 'sessions#create' 
+delete 'logout' => 'sessions#destroy', as: :logout
+
 root 'users#index', as: :home
+
+resources :password_resets
   
 resources  :users do
   resources  :items 
 end
 
-get 'login' => 'sessions#new', as: :login
-post 'login' => 'sessions#create' 
-delete 'logout' => 'sessions#destroy', as: :logout
-
 patch 'update_user' => 'users#update', as: :update_user
-
 
 end
   
