@@ -1,6 +1,10 @@
 <h2><b> <%= @current_user.name %>'s Groups are : </b></h2><br>
 
-<p><b> Click on each Group Name if you want to edit or delete this Group. </b></p><br>
+<% if @current_user.id == @group.owner_id %>
+	<p><b> Click on each Group Name if you want to edit or delete this Group. </b></p><br>
+<% else %>
+	<p><b> Click on each Group Name if you want to join this Group. </b></p><br>
+<% end %>				<%# TODO:  can join group this way???  %>
 
 <fieldset>
 	<body>

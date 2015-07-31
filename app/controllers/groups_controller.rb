@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-		@group = Group.create(group_params.merge(owner_id: current_user.id))
+		@group = current_user.groups.create(group_params.merge(owner_id: current_user.id))
 		redirect_to groups_url				
 	end
 
