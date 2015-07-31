@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 	def edit
 		@user = User.find(params[:id])
 		if current_user.id != @user.id
-			flash[:notice] = 'Not authorized to edit this profile'
+			flash[:failure] = 'Not authorized to edit this profile'
       redirect_to user_path
     end 
 	end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if current_user.id != @user.id
-			flash[:notice] = 'Not authorized to edit this profile'
+			flash[:failure] = 'Not authorized to edit this profile'
     else 
 			@user.update(user_params)
 		end

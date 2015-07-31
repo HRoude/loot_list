@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
 
 	def index
 		@group = Group.new
+		@groups = Group.all
 	end
 
 	def new
@@ -9,8 +10,8 @@ class GroupsController < ApplicationController
 	end
 
 	def create
-		@group = Group.create(group_params)
-		redirect_to group_url(@group)
+		@group = Group.create(group_params.merge(owner_id: current_user.id))
+		redirect_to groups_url				
 	end
 
 	def show
@@ -19,19 +20,27 @@ class GroupsController < ApplicationController
 		
 	def edit
 		@group = Group.find(params[:id])
-	end			# TODO  set up restrictions of whom can edit group
+		if current_user.id != @group.owner_id
+      redirect_to groups_url(@group)		
+    end
+	end		
 
 	def update
 		@group = Group.find(params[:id])
-		@group.update(group_params)
-		redirect_to group_url(@group)
-	end   			# TODO  set up restrictions of whom can update group
+		if current_user.id == @group.owner_id
+			@group.update(group_params)
+			flash[:success] = 'You have successfully edited the Group!'
+		end	
+		redirect_to groups_url(@group)
+	end   			
 
 	def destroy
 		@group = Group.find(params[:id])
-		@group.destroy
-		redirect_to user_path
-
+		if current_user.id == @group.owner_id
+			@group.destroy
+			flash[:success] = 'You successfully deleted this Group!'
+		end		
+		redirect_to groups_url
 	end
 
 
