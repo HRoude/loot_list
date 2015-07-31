@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	
 	has_many :items
 	has_many :group_memberships
-	has_many :groups, through: => :group_memberships
+	has_many :groups, through: :group_memberships
 
 	def generate_token(column)
     begin
