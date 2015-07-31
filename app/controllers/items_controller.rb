@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @item = @user.items.new
     if current_user.id != @item.user_id
       flash[:failure] = 'Not authorized to add an item to this item'
-      redirect_to user_items_path
+      redirect_to user_items_url
     end 
   end
 
@@ -20,13 +20,14 @@ class ItemsController < ApplicationController
     if current_user.id == @item.user_id
       @item = @user.items.create!(item_params)  
       if @item.persisted?
-        redirect_to user_items_path, notice: "#{@item.name} has been added to your Want-It list."
+        redirect_to user_items_url
+        flash[:notice] = "#{@item.name} has been added to your Want-It list."
       else
         render 'new'
       end
     else  
       flash[:failure] = 'Not authorized to add an item to this list'
-      redirect_to user_items_path
+      redirect_to user_items_url
     end  
   end
 
@@ -35,7 +36,7 @@ class ItemsController < ApplicationController
     @item = @user.items.find(params[:id])
     if current_user.id != @item.user_id
       flash[:failure] = 'Not authorized to edit this item'
-      redirect_to user_items_path
+      redirect_to user_items_url
     else  
       @user = current_user
     end  
@@ -47,10 +48,10 @@ class ItemsController < ApplicationController
     @item = @user.items.find(params[:id])
     if current_user.id != @item.user_id
       flash[:failure] = 'Not authorized to edit this item'
-      redirect_to user_items_path
+      redirect_to user_items_url
     else
       @item.update(item_params)
-      redirect_to user_items_path
+      redirect_to user_items_url
     end
   end
 
@@ -59,10 +60,10 @@ class ItemsController < ApplicationController
     @item = @user.items.find(params[:id])
     if current_user.id != @item.user_id
       flash[:failsure] = 'Not authorized to delete this item'
-      redirect_to user_items_path
+      redirect_to user_items_url
     else
       @item.destroy
-      redirect_to user_items_path
+      redirect_to user_items_url
     end
   end  
 

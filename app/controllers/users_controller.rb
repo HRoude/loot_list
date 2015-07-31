@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 		if @user.persisted?
 			UserMailer.welcome_email(@user).deliver_now
 			flash[:success] = "Congratulations!  You have registered.  Please log in."
-			redirect_to user_path(@user)
+			redirect_to user_url(@user)
 		else
 			flash[:failure] = "Registration not successful.   Please try again."
-			redirect_to home_path
+			redirect_to home_url
 		end						## TODO: specific error message / params on email/username
 	end								
 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		if current_user.id != @user.id
 			flash[:failure] = 'Not authorized to edit this profile'
-      redirect_to user_path
+      redirect_to user_url
     end 
 	end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     else 
 			@user.update(user_params)
 		end
-		redirect_to user_path
+		redirect_to user_url
 	end
 
 
