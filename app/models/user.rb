@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
 	validates_uniqueness_of :name, :email
 	
 	has_many :items
-	#has_many :group_memberships
-	has_many :groups#, through: => :group_memberships
+	has_many :group_memberships
+	has_many :groups, through: => :group_memberships
 
 	def generate_token(column)
     begin
