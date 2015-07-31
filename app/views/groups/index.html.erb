@@ -1,0 +1,24 @@
+<h2><b> <%= @current_user.name %>'s Groups are : </b></h2><br>
+
+<p><b> Click on each Group Name if you want to edit or delete this Group. </b></p><br>
+
+<fieldset>
+	<body>
+		<div class="user-group-list col-md-4 table-responsive">
+			<table class="table table-bordered table-striped">
+			  <tr>
+			    <th> Group Name </th><br>		
+			  </tr>
+			  
+			  <% @groups.each do |group| %>
+			  <tr>
+			    <td> <%= link_to group.name, group_path(group) %> </td>		
+			 	</tr>
+			  <% end %>
+
+			</table><br><br>
+		</div> 
+	</body>
+</fieldset>
+
+

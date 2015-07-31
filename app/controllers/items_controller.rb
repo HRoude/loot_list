@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])   
     @item = @user.items.new
     if current_user.id != @item.user_id
-      flash[:notice] = 'Not authorized to add an item to this item'
+      flash[:failure] = 'Not authorized to add an item to this item'
       redirect_to user_items_path
     end 
   end
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
         render 'new'
       end
     else  
-      flash[:notice] = 'Not authorized to add an item to this list'
+      flash[:failure] = 'Not authorized to add an item to this list'
       redirect_to user_items_path
     end  
   end
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
     if current_user.id != @item.user_id
-      flash[:notice] = 'Not authorized to edit this item'
+      flash[:failure] = 'Not authorized to edit this item'
       redirect_to user_items_path
     else  
       @user = current_user
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
     if current_user.id != @item.user_id
-      flash[:notice] = 'Not authorized to edit this item'
+      flash[:failure] = 'Not authorized to edit this item'
       redirect_to user_items_path
     else
       @item.update(item_params)
@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
     if current_user.id != @item.user_id
-      flash[:notice] = 'Not authorized to delete this item'
+      flash[:failsure] = 'Not authorized to delete this item'
       redirect_to user_items_path
     else
       @item.destroy
