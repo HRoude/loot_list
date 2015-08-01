@@ -1,4 +1,4 @@
-
+<center>
 <h1> Welcome to Want-It! </h1><br><br>
   <P> Just last week somewhere in this world, a wife asked her husband what he would like for his birthday.  Not expecting anything more than the usual response.....</P><br>
 
@@ -6,14 +6,15 @@
 
   <p> Herein lies the perfect solution......private, secure, available to loved ones, family, friends....form groups...  Info always there and easily updated to</p><br>
 
-  <p> This is not just any wish list you find out there....more personalized.   It has vacation options, favorite activities, preferred charities and even what someone does NOT LIKE.....</p><br>
+  <p> This is not just any wish list you find out there....more personalized.   It has vacation options, favorite activities, preferred charities and even what someone does NOT LIKE.....</p><br><br><br>
+</center>
 
 <div class="user_form">
   <%= form_for(@user) do |f| %>
-  <fieldset>
-    <h4><b> PLEASE REGISTER TO MAKE A NEW WISH LIST OR VIEW SOMEONE'S WISH LIST </b></h4>
+  <fieldset><center>
+    <h4><b> PLEASE REGISTER TO CREATE A WISH LIST OR VIEW A WISH LIST </b></h4><br>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-md-4 col-md-offset-4">
         <%= f.text_field :name, size: 60, class:'form-control' %>
         <%= f.label :name, 'Your Name' %><br><br>
 
@@ -24,14 +25,14 @@
         <%= f.label :password, 'Your Password' %><br><br>
 
         <%= f.password_field :password_confirmation, size: 60, class:'form-control' %>
-          <%= f.label :password_confirmation, 'Please Confirm Password' %><br>
+          <%= f.label :password_confirmation, 'Please Confirm Password' %>
         <br><br>
        <div class="actions">
-        <%= f.submit %>
+        <%= f.submit %><br><br>
        </div>
      </div>
     </div>
-    </fieldset>
+    </fieldset></center>
   <% end %>
 </div>
 

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 		if @user.persisted?
 			UserMailer.welcome_email(@user).deliver_now
 			flash[:success] = "Congratulations!  You have registered.  Please log in."
-			redirect_to user_url(@user)
+			redirect_to login_url(@user)
 		else
 			flash[:failure] = "Registration not successful.   Please try again."
 			redirect_to home_url
