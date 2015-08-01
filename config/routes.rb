@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'group_memberships/index'
-
-  get 'group_memberships/new'
-
-  get 'group_memberships/creat'
-
-  get 'group_memberships/edit'
-
-  get 'group_memberships/update'
-
-  get 'group_memberships/destroy'
-
 get 'login' => 'sessions#new', as: :login
 post 'login' => 'sessions#create' 
 delete 'logout' => 'sessions#destroy', as: :logout
@@ -27,8 +15,11 @@ end
 patch 'update_user' => 'users#update', as: :update_user
 
 resources :groups do 
-  resources :group_memberships
+  get 'create_invite'
+  post 'send_invite'
 end
+
+
 
 end
   

@@ -48,6 +48,8 @@ group :development, :test do
 
   gem 'quiet_assets'
   gem 'dotenv-rails'
+  gem "better_errors"
+  gem "binding_of_caller"
   
 end
 

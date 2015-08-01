@@ -1,28 +1,41 @@
+
 <h2><b> <%= @current_user.name %>'s Groups are : </b></h2><br>
 
-<% if @current_user.id == @group.owner_id %>
-	<p><b> Click on each Group Name if you want to edit or delete this Group. </b></p><br>
-<% else %>
-	<p><b> Click on each Group Name if you want to join this Group. </b></p><br>
-<% end %>				<%# TODO:  can join group this way???  %>
+<p><b> Click on each Group Name if you want to edit or delete or add someone to this Group. </b></p><br>
 
 <fieldset>
-	<body>
-		<div class="user-group-list col-md-4 table-responsive">
-			<table class="table table-bordered table-striped">
-			  <tr>
-			    <th> Group Name </th><br>		
-			  </tr>
-			  
-			  <% @groups.each do |group| %>
-			  <tr>
-			    <td> <%= link_to group.name, group_path(group) %> </td>		
-			 	</tr>
-			  <% end %>
+		<div class="user-group-list col-md-6 table-responsive">
+			<table class="table table-bordered">
+			  <body>
+			  	<% @groups.each do |group| %>
+			  		<tr>
+			    		<td> <h4><%= link_to group.name, group_path(group) %></h4> 
+
+								<table class="table table-bordered table-responsive">
+									<head>
+										<tr> 
+											<th> Group Members </th>
+										</tr>
+									</head>	
+									
+									<body>	
+										<% group.users.each do |user| %> 	
+										<tr>
+											<td> <%= link_to user.name, user_items_path(user) %> </td>
+										</tr>
+										<% end %>
+									</body>	
+								</table>
+
+			    		</td>		
+			 			</tr>
+			  	<% end %>
+				</body>  
 
 			</table><br><br>
 		</div> 
-	</body>
 </fieldset>
+
+
 
 

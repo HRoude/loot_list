@@ -10,6 +10,10 @@
 
 <% if @current_user.id == @user.id %>
 	<a><%= link_to "ADD TO WANT-IT LIST", new_user_item_path, class: 'btn btn-default btn-sm' %></a><br><br>
+
+<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
 <% end %>
+
+<%= link_to "VIEW YOUR GROUPS", groups_path, class: 'btn btn-default btn-sm' %><br><br>
 
 

@@ -1,6 +1,6 @@
-class CreateGroupMemberships < ActiveRecord::Migration
+class CreateMemberships < ActiveRecord::Migration
   def change
-    create_table :group_memberships do |t|
+    create_table :memberships do |t|
       t.belongs_to :group, index: true
       t.belongs_to :user,  index: true	
       t.timestamps null: false
