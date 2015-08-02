@@ -17,8 +17,8 @@ patch 'update_user' => 'users#update', as: :update_user
 resources :groups do 
   get 'create_invite'
   post 'send_invite'
+  delete 'user_remove_from/:user_id' => 'groups#user_remove_from', as: :user_remove_from
 end
-
 
 
 end

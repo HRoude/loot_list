@@ -24,11 +24,11 @@ class UsersController < ApplicationController
 	end								
 
 	def show
-		@user = User.find(params[:id])
+		@user = find_user
 	end
 
 	def edit
-		@user = User.find(params[:id])
+		@user = find_user
 		if current_user.id != @user.id
 			flash[:failure] = 'Not authorized to edit this profile'
       redirect_to user_url
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		@user = User.find(params[:id])
+		@user = find_user
 		if current_user.id != @user.id
 			flash[:failure] = 'Not authorized to edit this profile'
     else 
@@ -51,5 +51,9 @@ class UsersController < ApplicationController
 		def user_params
 			params.require(:user).permit(:email, :name, :password, :password_confirmation, :birthday, :current_interests, :special_event, :general_dislikes)
 		end	
+
+		def find_user
+			User.find(params[:id])
+		end
 
 end

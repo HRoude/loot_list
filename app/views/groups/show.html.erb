@@ -19,7 +19,10 @@
 									<body>	
 										<% @group.users.each do |user| %> 	
 										<tr>
-											<td> <%= user.name %> </td>
+											<td> 
+												<%= user.name %> 
+												<%= link_to "REMOVE FROM GROUP", group_user_remove_from_path(@group, user), method: :delete, class: 'btn btn-default btn-xs pull-right' %>
+											</td>
 										</tr>
 										<% end %>
 									</body>	
@@ -33,7 +36,7 @@
 		</div> 
 </fieldset>
 
-<%= link_to "ADD SOMEONE TO THIS GROUP", group_create_invite_path(@group), class: 'btn btn-default btn-sm' %><br><br>  
+<%= link_to "ADD SOMEONE TO THIS GROUP", group_create_invite_path(@group), class: 'btn btn-default btn-sm' %><br><br> 
 
 <% if @current_user.id == @group.owner_id %>
 <%= link_to "EDIT YOUR GROUP", edit_group_path(@group), class: 'btn btn-default btn-sm' %><br><br>  
