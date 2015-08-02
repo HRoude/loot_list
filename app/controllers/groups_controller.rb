@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
 	end
 
 	def show
-		@group = find_group
+		@group = find_group(params[:id])
 		if current_user.id != @group.owner_id
 		  flash[:notice] = 'You have not created any groups yet'	
 		  redirect_to user_url(@user)
@@ -22,12 +22,12 @@ class GroupsController < ApplicationController
 	end
 
 	def create_invite  
-		@group = Group.find(params[:group_id])
+		@group = find_group(params[:group_id])
 		@user = User.new
 	end
 
 	def send_invite
-		@group = Group.find(params[:group_id])
+		@group = find_group(params[:group_id])
 			if User.exists?(email: params[:user][:email])
 	  		@user = User.find_by(email: params[:user][:email])
 	  		if @group.in_group?(@user)
@@ -46,16 +46,23 @@ class GroupsController < ApplicationController
 			end	
 		redirect_to groups_url
 	end	
-	
+
+	def user_remove_from
+		@group = find_group(params[:group_id])
+		@user = User.find(params[:user_id])
+		@user.groups.delete(@group)
+		redirect_to groups_url(@group)
+	end	
+
 	def edit
-		@group = find_group
+		@group = find_group(params[:id])
 		if current_user.id != @group.owner_id
       redirect_to groups_url(@group)		
     end
 	end		
 
 	def update
-		@group = find_group
+		@group = find_group(params[:id])
 		if current_user.id == @group.owner_id
 			@group.update(group_params)
 			flash[:success] = 'You have successfully edited the Group!'
@@ -64,7 +71,7 @@ class GroupsController < ApplicationController
 	end   			
 
 	def destroy
-		@group = find_group
+		@group = find_group(params[:id])
 		if current_user.id == @group.owner_id
 			@group.destroy
 			flash[:success] = 'You successfully deleted this Group!'
@@ -83,8 +90,8 @@ class GroupsController < ApplicationController
 			params.require(:user).permit(:name, :email)
 		end
 
-		def find_group
-			Group.find(params[:id])
+		def find_group(id)
+			Group.find(id)
 		end	
 	
 end     # end Class
