@@ -1,13 +1,20 @@
 
-<h2> Group - <%= @group.name %> </h2><br><br>
+<h2> Group - <%= @group.name %> </h2>
+<i><small> (This group belongs to : <%= @group.owner_name %>) </small></i><br><br>
 
 <fieldset>
 		<div class="user-group-list col-md-6 table-responsive">
 			<table class="table table-bordered">
 			  <body>
 			  		<tr>
-			    		<td> <h4><%= @group.name %><br>
-			    					<i><small> (This group belongs to : <%= @group.owner_name %>) </small></i></h4>
+			  			<% if @current_user.id == @group.owner_id %>
+			    		<td> 
+			    		<h4>
+			    			<%= link_to 'DELETE THIS GROUP', group_path(@group), method: :delete, data: { confirm: 'Are you sure you want to delete this Group?' }, class: 'btn btn-default btn-xs pull-right' %>
+			    			<%= link_to @group.name, edit_group_path(@group) %><br>
+			    			<i><small> (This group belongs to : <%= @group.owner_name %>) </small></i>
+			    		</h4><br>
+			    		<% end %>			
 
 								<table class="table table-bordered table-responsive">
 									<head>
@@ -21,8 +28,11 @@
 										<tr>
 											<td> 
 												<%= user.name %> 
+												<% if @current_user.id == @group.owner_id %>
 												<%= link_to "REMOVE FROM GROUP", group_user_remove_from_path(@group, user), method: :delete, class: 'btn btn-default btn-xs pull-right' %>
+												<% end %>
 											</td>
+
 										</tr>
 										<% end %>
 									</body>	
@@ -36,13 +46,10 @@
 		</div> 
 </fieldset>
 
-<%= link_to "ADD SOMEONE TO THIS GROUP", group_create_invite_path(@group), class: 'btn btn-default btn-sm' %><br><br> 
-
 <% if @current_user.id == @group.owner_id %>
-<%= link_to "EDIT YOUR GROUP", edit_group_path(@group), class: 'btn btn-default btn-sm' %><br><br>  
-
-<%= link_to 'DELETE THIS GROUP', group_path(@group), method: :delete, data: { confirm: 'Are you sure you want to delete this Group?' }, class: 'btn btn-default btn-xs' %><br><br>
+	<%= link_to "ADD SOMEONE TO THIS GROUP", group_create_invite_path(@group), class: 'btn btn-default btn-sm' %><br><br> 
 <% end %>
 
-<%= link_to "VIEW YOUR GROUPS", groups_path, class: 'btn btn-default btn-sm' %><br><br>  
+<%= link_to "VIEW GROUPS", groups_path, class: 'btn btn-default btn-sm' %><br><br>  
+
 

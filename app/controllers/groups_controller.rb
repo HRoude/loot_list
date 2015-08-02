@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
 
 	def index
-		@groups = Group.where(owner_id: current_user.id)
+		@groups = current_user.groups
+		#@groups = Group.where(owner_id: current_user.id) 
 	end
 
 	def new
@@ -15,10 +16,11 @@ class GroupsController < ApplicationController
 
 	def show
 		@group = find_group(params[:id])
-		if current_user.id != @group.owner_id
-		  flash[:notice] = 'You have not created any groups yet'	
-		  redirect_to user_url(@user)
-		end
+
+		# if current_user.id != @group.owner_id
+		#   flash[:notice] = 'You have not created any groups yet'	
+		# end
+
 	end
 
 	def create_invite  
