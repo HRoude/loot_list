@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+
+  	<body>
+  		
+  		<h2> WELCOME TO WANT-IT.</h2>
+
+  		<p> 
+        We would like to welcome you to a great world where you should NOT RECEIVE any more gifts that you force a thank you smile and think about how to return it.  You can now start receiving the perfect gifts on your Loot-List! 
+      </p>
+
+      <p>
+        Your friend, <%= @group_owner_name %>, has successully registered to the most personalized gift wish list out there. <%= @group_owner_name %> has signed you up to the Group, "<%= @group.name %>", on Loot-List.
+      </p>
+
+  		<p>
+      	When you log into Loot-List, your name will show under Group, "<%= @group.name %>".  This means you and everyone in "<%= @group.name %>" is able to view each other's Loot-List Lists!
+      </P>
+
+      <P>
+        This email address, "<%= @user.email %>," is what was used by <%= @group_owner_name %> to add you to their Group.
+    	</p>
+
+      <p>
+        Please click the URL link below to set your password :
+      </p>
+
+      <p>
+        <%= edit_password_reset_url(@user.password_reset_token) %> 
+      </p>
+
+      <p>
+        Please then log into <%= 'http://loot-list.herokuapp.com/login' %> and create your full profile and start creating your own perfect Loot-List. You may personalize your own Want_It List.  You can tailor each item on this list, so that each gift is perfect when you receive it.   Don't forget to add your friends and family so they can view your list as well.
+      </p>
+
+  		<p> 
+  			Loot-List  Where the Perfect gift idea is just a click away. 
+        <%= link_to 'http://loot-list.herokuapp.com', 'http://loot-list.herokuapp.com', :target => "_blank" %> 
+  		</p>
+
+  		<p>
+  			Thank you for entrusting us with helping you get the perfect gift and have a fabulous day!
+  		</p>
+
+  	</body>

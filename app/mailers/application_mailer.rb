@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "want.it.list@gmail.com"
+  default from: "your.loot.list@gmail.com"
   layout 'mailer'
 end

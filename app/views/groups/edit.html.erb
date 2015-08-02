@@ -1,11 +1,11 @@
 
-<h2> Edit Group Name </h2>
+<h2> <%= @group.name %><small><i><br> (edit or delete this group) </i></small></h2><br>
 
 <%= render 'form' %>
 
-<%# TODO:  Need to add people to this group %>
+<%= link_to "ADD SOMEONE TO THIS GROUP", group_create_invite_path(@group), class: 'btn btn-default btn-sm' %><br><br>  
 
 <% if @current_user.id == @group.owner_id %>
-<%= link_to 'Delete This Group', group_path(@group), method: :delete, data: { confirm: 'Are you sure you want to delete this Group?' }, class: 'btn btn-default btn-md' %>
+<%= link_to 'DELETE THIS GROUP', group_path(@group), method: :delete, data: { confirm: 'Are you sure you want to delete this Group?' }, class: 'btn btn-default btn-xs' %>
 <% end %>
 

@@ -1,6 +1,6 @@
 
 
-<h2> <%= @user.name %>'s Want-It List </h2>
+<h2> <%= @user.name %>'s Loot-List </h2>
 
 <% if @current_user.id == @user.id %>
 <p><b> Click on each Item Name if you want to edit or delete this item. </b></p>
@@ -9,7 +9,7 @@
 <%= render 'items/index' %>
 
 <% if @current_user.id == @user.id %>
-	<a><%= link_to "ADD TO WANT-IT LIST", new_user_item_path, class: 'btn btn-default btn-sm' %></a><br><br>
+	<a><%= link_to "ADD TO LOOT-LIST", new_user_item_path, class: 'btn btn-default btn-sm' %></a><br><br>
 
 <%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
 <% end %>

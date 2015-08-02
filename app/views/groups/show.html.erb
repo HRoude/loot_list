@@ -1,15 +1,45 @@
 
-<h2> Your Group is <%= @group.name %> </h2><br><br>
+<h2> Group - <%= @group.name %> </h2><br><br>
 
-<b>SHOW GROUP MEMBERS HERE!! </b><br><br>
-<%# TODO:  Need to show group members here %>
+<fieldset>
+		<div class="user-group-list col-md-6 table-responsive">
+			<table class="table table-bordered">
+			  <body>
+			  		<tr>
+			    		<td> <h4><%= @group.name %><br>
+			    					<i><small> (This group belongs to : <%= @group.owner_name %>) </small></i></h4>
+
+								<table class="table table-bordered table-responsive">
+									<head>
+										<tr> 
+											<th> Group Members </th>
+										</tr>
+									</head>	
+									
+									<body>	
+										<% @group.users.each do |user| %> 	
+										<tr>
+											<td> <%= user.name %> </td>
+										</tr>
+										<% end %>
+									</body>	
+								</table>
+
+			    		</td>		
+			 			</tr>
+				</body>  
+
+			</table><br><br>
+		</div> 
+</fieldset>
 
 <%= link_to "ADD SOMEONE TO THIS GROUP", group_create_invite_path(@group), class: 'btn btn-default btn-sm' %><br><br>  
 
 <% if @current_user.id == @group.owner_id %>
 <%= link_to "EDIT YOUR GROUP", edit_group_path(@group), class: 'btn btn-default btn-sm' %><br><br>  
 
-<%= link_to 'DELETE THIS GROUP', group_path(@group), method: :delete, data: { confirm: 'Are you sure you want to delete this Group?' }, class: 'btn btn-default btn-md' %><br><br>
+<%= link_to 'DELETE THIS GROUP', group_path(@group), method: :delete, data: { confirm: 'Are you sure you want to delete this Group?' }, class: 'btn btn-default btn-xs' %><br><br>
 <% end %>
 
+<%= link_to "VIEW YOUR GROUPS", groups_path, class: 'btn btn-default btn-sm' %><br><br>  
 

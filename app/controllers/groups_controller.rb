@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
 	end
 
 	def show
-		@group = Group.find(params[:id])
+		@group = find_group
 		if current_user.id != @group.owner_id
 		  flash[:notice] = 'You have not created any groups yet'	
 		  redirect_to user_url(@user)
@@ -28,42 +28,43 @@ class GroupsController < ApplicationController
 
 	def send_invite
 		@group = Group.find(params[:group_id])
-
-		if User.exists?(email: params[:user][:email])
-  		@user = User.find_by(email: params[:user][:email])
-  		
-  		#UserMailer.welcome_email(@user).deliver_now  EMAIL WELCOME TO GROUP
-  	else 	
-			@user = User.create(user_params.merge(password: 'password', password_confirmation: 'password'))
-    
-    	
-
-   #  	if @user.persisted?
-			# UserMailer.welcome_email(@user).deliver_now   # EMAIL WELCOME TO GROUP
-			# end																							# AND PASSWORD UPDATE
-		end
-		@user.groups << @group
+			if User.exists?(email: params[:user][:email])
+	  		@user = User.find_by(email: params[:user][:email])
+	  		if @group.in_group?(@user)
+					flash[:failure] = "This User is already in this group!"
+				else	
+	  			UserMailer.exist_user_group_welcome(@user, @group).deliver_now
+	  			@user.groups << @group   	   # email welcome to group existing user
+	  		end
+	 		else 	 
+			@user = User.create(user_params.merge(password: 'password', password_confirmation: 'password', password_reset_sent_at: Time.now))  # creates user / assigns column values	
+	    	if @user.persisted?   
+	  			@user.send_password_reset        
+					UserMailer.new_user_group_welcome(@user, @group).deliver_now 
+					@user.groups << @group 
+				end								# email welcome to new user and password reset link				
+			end	
 		redirect_to groups_url
 	end	
 	
 	def edit
-		@group = Group.find(params[:id])
+		@group = find_group
 		if current_user.id != @group.owner_id
       redirect_to groups_url(@group)		
     end
 	end		
 
 	def update
-		@group = Group.find(params[:id])
+		@group = find_group
 		if current_user.id == @group.owner_id
 			@group.update(group_params)
 			flash[:success] = 'You have successfully edited the Group!'
 		end	
-		redirect_to groups_url(@group)
+		redirect_to group_url
 	end   			
 
 	def destroy
-		@group = Group.find(params[:id])
+		@group = find_group
 		if current_user.id == @group.owner_id
 			@group.destroy
 			flash[:success] = 'You successfully deleted this Group!'
@@ -81,6 +82,10 @@ class GroupsController < ApplicationController
 		def user_params
 			params.require(:user).permit(:name, :email)
 		end
+
+		def find_group
+			Group.find(params[:id])
+		end	
 	
 end     # end Class
 

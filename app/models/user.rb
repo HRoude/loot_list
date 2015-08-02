@@ -20,12 +20,8 @@ class User < ActiveRecord::Base
 	  generate_token(:password_reset_token)
 	  self.password_reset_sent_at = Time.zone.now
 	  save!
-	  UserMailer.reset_register(self).deliver
+	  UserMailer.new_password(self).deliver
 	end
-
-	# def add_group(group, user)
-	# 	self.memberships.build(:membership => membership, :group => group)
-	# end
 		
 end
 
