@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 		else
 			flash[:failure] = "Registration not successful.   Please try again."
 			redirect_to home_url
-		end						## TODO: specific error message / params on email/username
+		end				
 	end								
 
 	def show

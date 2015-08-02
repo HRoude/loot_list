@@ -1,8 +1,8 @@
 
-<h2>Create your own personalized Want-It List</h2>
+<h2>Create your own personalized Loot-List</h2>
 
 <%= render 'items/form' %>
 
 <% if @current_user.id == @user.id %>
-  <a><%= link_to "EDIT WANT-IT LIST", user_items_path, class: 'btn btn-default btn-sm' %></a><br><br>
+  <a><%= link_to "EDIT LOOT-LIST", user_items_path, class: 'btn btn-default btn-sm' %></a><br><br>
 <% end %>

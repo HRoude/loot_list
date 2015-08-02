@@ -9,7 +9,10 @@
 			  <body>
 			  	<% @groups.each do |group| %>
 			  		<tr>
-			    		<td> <h4><%= link_to group.name, group_path(group) %></h4> 
+			    		<td><h4>
+			    					<%= link_to group.name, group_path(group) %><br>
+			    					<i><small> (This group belongs to : <%= group.owner_name %>) </small></i>
+			    				</h4> 
 
 								<table class="table table-bordered table-responsive">
 									<head>
@@ -32,9 +35,11 @@
 			  	<% end %>
 				</body>  
 
-			</table><br><br>
+			</table>
 		</div> 
 </fieldset>
+
+<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
 
 
 

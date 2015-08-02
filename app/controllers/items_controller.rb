@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
       @item = @user.items.create!(item_params)  
       if @item.persisted?
         redirect_to user_items_url
-        flash[:notice] = "#{@item.name} has been added to your Want-It list."
+        flash[:notice] = "#{@item.name} has been added to your Loot-List list."
       else
         render 'new'
       end

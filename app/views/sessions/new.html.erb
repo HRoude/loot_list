@@ -17,12 +17,12 @@
         <%=label_tag :remember_me, 'Remember me?' %><br><br>
 
         <div class="actions">
-          <%= submit_tag "Login" %>
+          <%= submit_tag 'LOGIN', class: 'btn btn-default btn-xs'   %>
         </div>
 
-        <p> Not a registered user?  <%= link_to 'Register', home_path, class: 'btn btn-default btn-xs' %></p><br><br>
+        <p> Not a registered user?  <%= link_to 'REGISTER', home_path, class: 'btn btn-default btn-xs' %></p><br><br>
       
-        <%= link_to "Forgot Password?", new_password_reset_path, class: 'btn btn-default btn-xs' %>
+        <%= link_to "FORGOT PASSWORD?", new_password_reset_path, class: 'btn btn-default btn-xs' %>
    	
       </div>
     </div>	
