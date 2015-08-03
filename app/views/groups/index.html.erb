@@ -8,7 +8,7 @@
 
 <fieldset>
 		<div class="user-group-list col-md-6 table-responsive">
-			<table class="table table-bordered">
+			<table class="table table-bordered table-hover">
 			  <body>
 			  	<% @groups.each do |group| %>
 			  		<tr>
@@ -17,7 +17,7 @@
 			    					<i><small> (This group belongs to : <%= group.owner_name %>) </small></i>
 			    				</h4> 
 
-								<table class="table table-bordered table-responsive">
+								<table class="table table-bordered table-responsive table-hover">
 									<head>
 										<tr> 
 											<th> Group Members </th>

@@ -13,17 +13,16 @@
       <%= f.text_area :descrip, size: "80x8", maxlength: "100", class:'form-control', :placeholder => 'Product details from manufacturer' %><br>
 
       <b><%= f.label :comment, 'Comments' %></b><br>
-      <%= f.text_area :comment, size: "80x8", maxlength: "300",class:'form-control', :placeholder => 'What size?  Color?  What details you do NOT want in this item?' %><br>
+      <%= f.text_area :comment, size: "80x8", maxlength: "150",class:'form-control', :placeholder => 'What size?  Color?  What details?' %><br>
+
+      <b><%= f.label :dislike, 'Dislikes' %></b><br>
+      <%= f.text_area :dislike, size: "80x8", maxlength: "150",class:'form-control', :placeholder => 'Must NOT be slimy!  Cannot stand anything cotton!' %><br>
 
       <b><%= f.label :price, 'Estimated Price' %></b><br>
       <%= f.number_field :price, size: "82", step:"any", min:"0", class:'form-control', :placeholder => 'Just a general idea of the cost' %><br>
 
-
       <b><%= f.label :url_link, 'Web Link' %></b><br>
       <%= f.text_area :url_link, size: "80x8", maxlength: "300", class:'form-control', :placeholder => 'Copy and Paste weblink from the item you want to here' %><br>
-      
-      <b><%= f.label :category, 'Item Category' %></b><br>
-      <%= f.text_area :category, size: "80x6", class:'form-control', :placeholder => 'Please choose from category list below or make your own' %><br>
       
       <%= render 'items/categories' %><br>
 

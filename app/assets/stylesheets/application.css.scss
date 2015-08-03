@@ -17,13 +17,6 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-/*.background-image {
-	 margin: 0;
-	 background: url('../hand_holding_box.png');
-	 background-size: 100% auto;
-	 background-repeat:no-repeat;
-} */
-
 .item-category {
 	columns: 4;
 	-webkit-columns: 4;
@@ -38,6 +31,17 @@
 .yield{
 	margin: auto;
 	width: 90%;
+}
+
+.background-image{
+	height:100%;
+  width:100%;
+  background-image: url('/assets/blue_flower.png');
+  background-repeat: no-repeat;
+  background-size:100%;
+ 	background-position: center;
+  background-size: cover;
+  padding-top: 10px;
 }
 
 .btn-default{
@@ -59,8 +63,8 @@
 	font-family: "Arial", sans-serif;
 	font-size: 20px;	
 	font-weight: bold;	
-	color: black;
-	background-color: #33cc33 ;
+	color: navy;
+	background-color: white ;
 	border: green;
 }
 
@@ -76,8 +80,8 @@
 	font-family: "Arial", sans-serif;
 	font-size: 25px;	
 	font-weight: bold;
-	color: black;
-	background-color: red ;
+	color: red;
+	background-color: white ;
 	border: red;
 }
 
@@ -93,22 +97,31 @@
 	font-family: "Arial", sans-serif;
 	font-size: 25px;	
 	font-weight: bold;	
-	color: black;
-	background-color: yellow ;
+	color: purple;
+	background-color: white ;
 	border: yellow;
 }
 
 .loot-list-table {
 	table, th, td {
-		border: 1px solid black;
+		border: 5px solid black;
 		border-collapse: collapse;
-		padding: 5px;	
+		padding: 10px;	
 	}
 }
 
-.centered-text {
-	
+.perfect-gift-footer {
+	text-align: right;
+	font-family: papyrus, fantasy;
+	font-weight: bold;
+	font-size: 30px;
+	color: black;
+	padding-right: 25px;
+	padding-bottom: 15px;
 }
+
+
+
 
 
 
