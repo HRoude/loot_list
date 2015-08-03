@@ -3,13 +3,14 @@
 	<style class="loot-list-table"> </style>
 </head>
 <body>
-	<div class="user-want-list table-responsive">
-		<table class="table table-bordered table-striped">
+	<div class="user-want-list table-responsive table-solid">
+		<table class="table table-bordered table-hover ">
 		  <tr>
 		    <th> Item Name </th>
 		    <th> Description </th>		
-		    <th> Personal Comments </th>
-		    <th> Estimated Cost </th>
+		    <th> Comments </th>
+		    <th> Dislikes </th>
+		    <th> Cost </th>
 		    <th> Web Link </th>
 		    <th> Category </th>
 		    <th> Rating </th>
@@ -25,7 +26,8 @@
 			    <% end %>	
 			  </td>    
 		    <td> <%= want.descrip %> </td>		
-		    <td> <%= want.comment %> </td>		
+		    <td> <%= want.comment %> </td>	
+		    <td> <%= want.dislike %> </td>	
 		   	<td> <%= number_to_currency(want.price) %> </td>	
 		   	<td> <%= link_to want.url_link, want.url_link, :target => "_blank" %> </td>		
 		   	<td> <%= want.category %> </td>
@@ -33,7 +35,7 @@
 		   	<td> 
 					<div>
 						<% if @current_user.id == @user.id %>
-						  <%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-success btn-sm' %>							
+						  <%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure you want to remove this item from your list?'}, class: 'btn btn-success btn-sm' %>							
 	          <% end %>							
 					</div>   
 				</td>	

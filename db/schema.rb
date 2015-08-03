@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150731151403) do
     t.string   "name"
     t.string   "descrip"
     t.string   "comment"
+    t.string   "dislike"
     t.decimal  "price",       precision: 8, scale: 2
     t.string   "url_link"
     t.string   "image"

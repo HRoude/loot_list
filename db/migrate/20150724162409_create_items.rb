@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string  :name
       t.string  :descrip
       t.string  :comment
+      t.string  :dislike
       t.float   :price
       t.string  :url_link
       t.string  :image
