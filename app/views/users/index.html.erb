@@ -15,16 +15,16 @@
     <h4><b> PLEASE REGISTER TO CREATE A WISH LIST OR VIEW A WISH LIST </b></h4><br>
     <div class="row">
       <div class="col-md-4 col-md-4 col-md-offset-4">
-        <%= f.text_field :name, size: 60, class:'form-control' %>
+        <%= f.text_field :name, size: 60, class:'form-control', :placeholder => 'must be completed' %>
         <%= f.label :name, 'Your Name' %><br><br>
 
-        <%= f.email_field :email, size: 60, class:'form-control' %>
+        <%= f.email_field :email, size: 60, class:'form-control', :placeholder => 'must be completed' %>
          <%= f.label :email, 'Your Email' %><br><br>
 
-        <%= f.password_field :password, size: 60, class:'form-control' %>
+        <%= f.password_field :password, size: 60, class:'form-control', :placeholder => 'must be completed' %>
         <%= f.label :password, 'Your Password' %><br><br>
 
-        <%= f.password_field :password_confirmation, size: 60, class:'form-control' %>
+        <%= f.password_field :password_confirmation, size: 60, class:'form-control', :placeholder => 'must be completed' %>
           <%= f.label :password_confirmation, 'Please Confirm Password' %>
         <br><br>
        <div class="actions">

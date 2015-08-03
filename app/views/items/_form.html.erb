@@ -6,37 +6,28 @@
 <fieldset>
    	<div class="row"><br>
       <div class="col-md-8">
-      <b><%= f.label :name, 'Item Name' %></b>
-      <i> (This must be completed!)</i><br>  
-      <%= f.text_field :name, size: "82", class:'form-control' %><br>  
+      <b><%= f.label :name, 'Item Name' %></b><br>  
+      <%= f.text_field :name, size: "82", class:'form-control', :placeholder => 'This MUST be completed!' %><br>  
       
-      <b><%= f.label :descrip, 'Item Description' %></b>
-      <i> (Product details from manufacturer)</i><br>      
-      <%= f.text_area :descrip, size: "80x8", maxlength: "100", class:'form-control' %><br>
+      <b><%= f.label :descrip, 'Item Description' %></b><br>      
+      <%= f.text_area :descrip, size: "80x8", maxlength: "100", class:'form-control', :placeholder => 'Product details from manufacturer' %><br>
 
-      <b><%= f.label :comment, 'Comments' %></b>
-      <i> (What size?  Color?  What details you do NOT want in this item?)</i><br>
-      <%= f.text_area :comment, size: "80x8", maxlength: "300",class:'form-control' %><br>
+      <b><%= f.label :comment, 'Comments' %></b><br>
+      <%= f.text_area :comment, size: "80x8", maxlength: "300",class:'form-control', :placeholder => 'What size?  Color?  What details you do NOT want in this item?' %><br>
 
-      <b><%= f.label :price, 'Estimated Price' %></b>
-      <i> (Just a general idea of the cost)</i><br>
-      <%= f.number_field :price, size: "82", step:"any", min:"0", class:'form-control' %><br>
+      <b><%= f.label :price, 'Estimated Price' %></b><br>
+      <%= f.number_field :price, size: "82", step:"any", min:"0", class:'form-control', :placeholder => 'Just a general idea of the cost' %><br>
 
 
-      <b><%= f.label :url_link, 'Web Link' %></b>   
-      <i> (Copy and Paste weblink from the item you want to here)</i><br>
-      <%= f.text_area :url_link, size: "80x8", maxlength: "300", class:'form-control' %><br>
+      <b><%= f.label :url_link, 'Web Link' %></b><br>
+      <%= f.text_area :url_link, size: "80x8", maxlength: "300", class:'form-control', :placeholder => 'Copy and Paste weblink from the item you want to here' %><br>
       
-      <b><%= f.label :category, 'Item Category' %></b>  <%# TODO: change categor input %>
-      <i> (Please separate each category by a comma.  Category list below)</i><br>
-      <%= f.text_area :category, size: "80x6", class:'form-control' %><br>
+      <b><%= f.label :category, 'Item Category' %></b><br>
+      <%= f.text_area :category, size: "80x6", class:'form-control', :placeholder => 'Please choose from category list below or make your own' %><br>
       
-      <%= render 'items/categories' %>
+      <%= render 'items/categories' %><br>
 
-      <b><%= f.label :want_rating, 'Rate Item' %></b>
-      <i> (Rate how much you want this item. On a scale of 1 to 5, with 5 being a MUST HAVE IT!)</i><br>
-      <%= f.text_field :want_rating, size: "60", class:'form-control' %><br>
-      <%# TODO: rate by clickable stars - gem %>
+      <%= render 'items/ratings' %><br><br>
 
        <div class="actions">
         <%= f.submit 'SAVE ITEM', class: 'btn btn-default btn-xs'%>

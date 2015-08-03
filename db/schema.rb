@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20150731151403) do
     t.string   "email"
     t.string   "name"
     t.date     "birthday"
-    t.string   "current_interests",      default: "(left blank)"
-    t.string   "special_event",          default: "(left blank)"
-    t.string   "general_dislikes",       default: "(left blank)"
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.string   "current_interests"
+    t.string   "special_event"
+    t.string   "general_dislikes"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
   end

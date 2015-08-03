@@ -1,0 +1,24 @@
+
+<%= form_for([@current_user, @item]) do |f| %>
+<div class="star-ratings">
+	<p>
+		<h5><b> Ratings </b>
+		<small><i> (Rate how much you want this item. ★★★★★ is a MUST HAVE IT!)</i></small></h5>
+
+ 		<%= f.radio_button :want_rating, '★' %>
+ 		<%= f.label '★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+ 		<%= f.radio_button :want_rating, '★★' %>
+ 		<%= f.label '★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+ 		<%= f.radio_button :want_rating, '★★★' %>
+ 		<%= f.label '★★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+ 		
+ 		<%= f.radio_button :want_rating, '★★★★' %>
+ 		<%= f.label '★★★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+ 		
+ 		<%= f.radio_button :want_rating, '★★★★★' %>
+ 		<%= f.label '★★★★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+ </p>
+</div>
+<% end %>
