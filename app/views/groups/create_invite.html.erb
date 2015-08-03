@@ -8,10 +8,10 @@
   <div class="row col-md-4"><br>
 
 	  <b><%= f.label :name, "Person's Name" %></b> 
-	  <%= f.text_field :name, size: "80", class:'form-control' %><br><br>
+	  <%= f.text_field :name, size: "80", class:'form-control', :placeholder => 'must be completed' %><br><br>
 
 	  <b><%= f.label :email, "Person's Email" %></b> 
-	  <%= f.text_field :email, size: "80", class:'form-control' %><br>
+	  <%= f.text_field :email, size: "80", class:'form-control', :placeholder => 'must be completed' %><br>
 
 	  <div class="actions" >
 	    <%= f.submit 'INVITE TO GROUP', class: 'btn btn-default btn-sm' %><br><br>

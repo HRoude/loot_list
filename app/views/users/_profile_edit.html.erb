@@ -6,20 +6,17 @@
     
     <div class="row"><br>
       <div class="col-md-6">
-        <%= f.date_field :birthday, size: "60", class:'form-control' %>
-        <b><%= f.label :birthday, 'Your Birthday' %></b><br><br>
-              
-        <%= f.text_area :current_interests, size: "80x10", maxlength: "100", class:'form-control' %>
-        <b><%= f.label :current_interests, 'Your Current Interests' %></b><br>
-         <i> (For example if you are involved in something special like volunteering at the animal shelter or getting ready to go on a white water rafting vacation.  Be happy!)</i><br><br><br>
-
-        <%= f.text_area :special_event, size: "80x8", maxlength: "100",class:'form-control' %>
-        <b><%= f.label :special_event, 'Special Event?' %></b><br>
-        <i> (For example if have a wedding, birthday, anniversary or your dog's birthday coming up.  Be smiley!)</i><br><br><br>
-
-        <%= f.text_area :general_dislikes, size: "80x8", maxlength: "100", class:'form-control' %>
-        <b><%= f.label :general_dislikes, 'Dislikes?' %></b><br>
-          <i> (For example if you cannot stand shopping at a partiular department store; cannot stand the color pink; cannot stand a type of food; or cannot stand a genre of literature.  Be dislikeful!)</i><br><br><br>
+        <b><%= f.label :birthday, 'Your Birthday' %></b>
+        <%= f.date_field :birthday, size: "60", class:'form-control' %><br><br>
+       
+        <b><%= f.label :current_interests, 'Your Current Interests' %></b>      
+        <%= f.text_area :current_interests, size: "80x10", maxlength: "100", class:'form-control', :placeholder => 'For example if you are involved in something special like volunteering at the animal shelter or getting ready to go on a white water rafting vacation.  Be happy!' %><br><br>
+        
+        <b><%= f.label :special_event, 'Special Event?' %></b>
+        <%= f.text_area :special_event, size: "80x8", maxlength: "100",class:'form-control', :placeholder => 'For example if have a wedding, birthday, anniversary or your dog\'s birthday coming up.  Be smiley!' %><br><br>
+        
+        <b><%= f.label :general_dislikes, 'Dislikes?' %></b>
+        <%= f.text_area :general_dislikes, size: "80x8", maxlength: "100", class:'form-control', :placeholder => 'For example if you cannot stand shopping at a partiular department store; cannot stand the color pink; cannot stand a type of food; or cannot stand a genre of literature.  Be dislikeful!' %><br><br>
 
         <div class="actions">
         <%= f.submit 'UPDATE USER', class: 'btn btn-default btn-xs' %>
