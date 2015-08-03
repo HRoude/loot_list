@@ -1,20 +1,24 @@
 
+<%= form_for([@current_user, @item]) do |f| %>
 <div class="star-ratings">
 	<p>
- 		<%= form.label '1 STAR' %>
- 		<%= form.check_box :1star %>
+		<h5><b> Ratings </b>
+		<small><i> (Rate how much you want this item. ★★★★★ is a MUST HAVE IT!)</i></small></h5>
 
- 		<%= form.label '2 STARS' %>
- 		<%= form.check_box :2stars %>
- 		
- 		<%= form.label '3 STARS' %>
- 		<%= form.check_box :3stars %>
- 		
- 		<%= form.label '4 STARS' %>
- 		<%= form.check_box :4stars %>
- 		
- 		<%= form.label '5 STARS' %>
- 		<%= form.check_box :5stars %>
+ 		<%= f.radio_button :want_rating, '★' %>
+ 		<%= f.label '★' %>&nbsp;&nbsp;&nbsp;&nbsp;
 
+ 		<%= f.radio_button :want_rating, '★★' %>
+ 		<%= f.label '★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+ 		<%= f.radio_button :want_rating, '★★★' %>
+ 		<%= f.label '★★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+ 		
+ 		<%= f.radio_button :want_rating, '★★★★' %>
+ 		<%= f.label '★★★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
+ 		
+ 		<%= f.radio_button :want_rating, '★★★★★' %>
+ 		<%= f.label '★★★★★' %>&nbsp;&nbsp;&nbsp;&nbsp;
  </p>
 </div>
+<% end %>

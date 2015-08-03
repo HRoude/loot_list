@@ -25,10 +25,9 @@
       <b><%= f.label :category, 'Item Category' %></b><br>
       <%= f.text_area :category, size: "80x6", class:'form-control', :placeholder => 'Please choose from category list below or make your own' %><br>
       
-      <%= render 'items/categories' %>
+      <%= render 'items/categories' %><br>
 
-      <b><%= f.label :want_rating, 'Rate Item' %></b><br>
-      <%= f.text_field :want_rating, size: "60", class:'form-control', :placeholder => 'Rate how much you want this item. On a scale of 1 to 5, with 5 being a MUST HAVE IT!' %><br>
+      <%= render 'items/ratings' %><br><br>
 
        <div class="actions">
         <%= f.submit 'SAVE ITEM', class: 'btn btn-default btn-xs'%>
