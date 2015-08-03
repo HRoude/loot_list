@@ -2,22 +2,19 @@
 <nav class="navbar navbar-default">
  
   <div class="container-fluid">  <!-- better mobile display -->
-    <div class="navbar-header">    
-      <%= link_to '<span class="glyphicon glyphicon-gift"></span> HOME'.html_safe, home_path, method: :get, class: 'btn btn-default btn-md' %> 
-        <% if session[:user_id] %>
-          <%= @current_user.name %> is logged in   
-        <% end %><br><br> 
+    <div class="navbar-header">  
+      <% if session[:user_id] %>  
+      <%= link_to '<span class="glyphicon glyphicon-gift"></span> GROUPS'.html_safe, groups_path, method: :get, class: 'btn btn-default btn-md' %>      
+      <% end %><br><br> 
     </div>
 
     <div class="pull-right">
-      <% if session[:user_id] %>
-        <%= link_to "YOUR PROFILE", user_path(@current_user), class: 'btn btn-default btn-md' %>
-      <% end %> 
-
       <% if session[:user_id].nil? %>
         <%= link_to "LOG IN", login_path, class: 'btn btn-default btn-md' %>
       <% else %>
-        <%= link_to "LOG OUT", logout_path, method: :delete, class: 'btn btn-default btn-md' %><br><br>
+        <%= link_to "YOUR PROFILE", user_path(@current_user), class: 'btn btn-default btn-md' %>
+        <%= link_to "LOG OUT", logout_path, method: :delete, class: 'btn btn-default btn-md' %><br>
+        <%= @current_user.name %> is logged in  <br><br>
       <% end %>
     </div>   
   </div>  
