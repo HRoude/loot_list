@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @item = @user.items.new
-    if current_user.id == @item.user_id
+    if current_user.id == @item.user_id  ###
       @item = @user.items.create!(item_params)  
       if @item.persisted?
         redirect_to user_items_url
