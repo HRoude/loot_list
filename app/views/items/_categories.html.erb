@@ -1,19 +1,150 @@
+	
+<%= form_for([@current_user, @item]) do |f| %>  
 
-<%#= form_for([@current_user, @item]) do |f| %>
-
-<div class="item-categories">
 	<p>
-		<h5><b> Category </b></h5> 
+		<b> Categories </b>
+		<small><i> (only check one)</i></small>
+	</p>
 
-		<ul>
- 		<%#= f.check_box(:category, checked_value = "Gift Card", unchecked_value = " ") %>
- 		<%#= f.label 'Gift Card' %> &nbsp;&nbsp;&nbsp;&nbsp;
- 
+<div class="categories container"> 	
+  <div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'EDUCATION' %>
+ 			<%= f.label 'Education' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'PHILANTHROPHY' %>
+ 			<%= f.label 'Philanthrophy' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'HOBBIES' %>
+ 			<%= f.label 'Hobbies' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6col-xs-12">
+ 			<%= f.radio_button :category, 'OUTDOOR ACTIVITIES' %>
+ 			<%= f.label 'Outdoor Activities' %>
+ 		</label>
+ 	</div>
 
- 		<%#= f.check_box :category %>
- 		<%#= f.label :category %> &nbsp;&nbsp;&nbsp;&nbsp;
-		</ul>
+ 	<div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'JEWELRY' %>
+ 			<%= f.label 'Jewelry' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'ACCESSORIES' %>
+ 			<%= f.label 'Accessories' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'ATTIRE' %>
+ 			<%= f.label 'Attire' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'SHOES' %>
+ 			<%= f.label 'Shoes' %>
+ 		</label>
+ 	</div>
 
- 	</p>
-</div>
-<%# end %>
+ 	<div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'PET' %>
+ 			<%= f.label 'Pet' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'ELECTRONICS' %>
+ 			<%= f.label 'Electronics' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'TOOLS' %>
+ 			<%= f.label 'Tools' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'DATE NIGHT' %>
+ 			<%= f.label 'Date Night' %>
+ 		</label>
+ 	</div>
+
+ 	<div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'BEAUTY' %>
+ 			<%= f.label 'Beauty' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'HEALTH/SPA' %>
+ 			<%= f.label 'Health/Spa' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'HOME/HOUSEHOLD' %>
+ 			<%= f.label 'Home/Household' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'KITCHEN' %>
+ 			<%= f.label 'Kitchen' %>
+ 		</label>
+ 	</div>
+
+ 	<div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'SPORTS PLAYED' %>
+ 			<%= f.label 'Sports Played' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">	
+ 			<%= f.radio_button :category, 'SPORTS TEAM' %>
+ 			<%= f.label 'Sports Team' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'VACATION/TRIP' %>
+ 			<%= f.label 'Vacation/Trip' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'AMUSEMENT PARK' %>
+ 			<%= f.label 'Amusement Park' %>
+ 		</label>
+ 	</div>
+
+ 	<div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'MOVIE' %>
+ 			<%= f.label 'Movie' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">	
+ 			<%= f.radio_button :category, 'MUSIC' %>
+ 			<%= f.label 'Music' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">	
+ 			<%= f.radio_button :category, 'CONCERT' %>
+ 			<%= f.label 'Concert' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">	
+ 			<%= f.radio_button :category, 'LIVE EVENTS' %>
+ 			<%= f.label 'Live Events' %>
+ 		</label>
+ 	</div>
+
+ 	<div class="controls form-group">
+ 		<label class="col-md-3 col-sm-6 col-xs-12">	
+ 			<%= f.radio_button :category, 'RESTAURANT' %>
+ 			<%= f.label 'Restaurant' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'FOOD' %>
+ 			<%= f.label 'Food' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'GIFT CARD' %>
+ 			<%= f.label 'Gift Card' %>
+ 		</label>
+ 		<label class="col-md-3 col-sm-6 col-xs-12">
+ 			<%= f.radio_button :category, 'OTHER' %>
+ 			<%= f.label 'Other' %>
+ 		</label><br><br>
+ 	</div>		 		
+</div>	
+
+<% end %>
+
+
+
+
+
+
