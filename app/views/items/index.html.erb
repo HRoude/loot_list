@@ -9,7 +9,7 @@
 <%= render 'items/index' %>
 
 <% if @current_user.id == @user.id %>
-	<a><%= link_to "ADD TO LOOT-LIST", new_user_item_path, class: 'btn btn-default btn-sm' %></a><br><br>
+	<%= link_to "ADD TO LOOT-LIST", new_user_item_path, class: 'btn btn-default btn-sm' %><br><br>
 
 <%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
 <% end %>
