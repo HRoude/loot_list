@@ -1,15 +1,21 @@
+<div class="profile-show">
+		<h2> <%= @user.name %>'s current profile is </h2><br><br>
 
-<h2> <%= @user.name %> current profile is </h2>
+		<%= render 'users/profile' %>
+	</div>
+</div>
 
-<%= render 'users/profile' %>
+<div class="list-inline">
+	<ul>
+	<% if @current_user.id == @user.id %>
+  	<%= link_to "EDIT PROFILE", edit_user_path, class: 'btn btn-default btn-sm' %><br><br>
+	<% end %>
 
-<% if @current_user.id == @user.id %>
-  <%= link_to "EDIT PROFILE", edit_user_path, class: 'btn btn-default btn-sm' %><br><br>
-<% end %>
+	<%= link_to 'LOOT <span class="glyphicon glyphicon-gift"></span> LIST'.html_safe, user_items_path(@user), method: :get, class: 'btn btn-default btn-sm' %><br><br> 
 
-<%= link_to "LOOT-LIST", user_items_path(@user), class: 'btn btn-default btn-sm' %><br><br>
+	<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %>
 
-<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
-
-<%= link_to "GROUPS YOU BELONG TO", groups_path, class: 'btn btn-default btn-sm' %><br><br>
+	<%= link_to "GROUPS YOU BELONG TO", groups_path, class: 'btn btn-default btn-sm' %><br><br>
+	</ul>
+</div>
 

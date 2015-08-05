@@ -38,7 +38,7 @@
 		   	<td> 
 					<div>
 						<% if @current_user.id == @user.id %>
-						  <%= link_to '<span class="glyphicon glyphicon-gift"></span> Gift Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure you want to remove this item from your list?'}, class: 'btn btn-success btn-sm' %>							
+						  <%= link_to 'Gift <span class="glyphicon glyphicon-gift"></span> Received'.html_safe, user_item_path(@user, want), method: :delete, data: {confirm: 'Are you sure you want to remove this item from your list?'}, class: 'btn btn-primary btn-sm' %>							
 	          <% end %>							
 					</div>   
 				</td>	

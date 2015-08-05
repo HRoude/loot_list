@@ -1,8 +1,7 @@
 
-<h2> <%= @current_user.name %> is logged in </h2>
+<h3> Thank you <%= @current_user.name %> for starting on your basic profile information. </h3><br>
 
-<%= render 'users/profile_edit' %>
+<%= render 'users/profile_edit' %><br>
 
-<br><%= link_to "YOUR PROFILE", user_path(@current_user), class: 'btn btn-default btn-sm' %><br>
+<%= link_to "YOUR PROFILE", user_path(@current_user), class: 'btn btn-default btn-sm' %><br>
 
-<br><%= link_to "HOME", home_path, class: 'btn btn-default btn-sm' %><br>

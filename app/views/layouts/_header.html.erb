@@ -1,11 +1,11 @@
 
 <nav class="navbar navbar-default">
  
-  <div class="container-fluid">  <!-- better mobile display -->
+  <div class="navbar-color container-fluid">  <!-- better mobile display -->
     <div class="navbar-header">  
 
       <% if session[:user_id] %>  
-      <%= link_to '<span class="glyphicon glyphicon-gift"></span> GROUPS'.html_safe, groups_path, method: :get, class: 'btn btn-default btn-md' %>      
+      <%= link_to 'LOOT <span class="glyphicon glyphicon-gift"></span> LISTS'.html_safe, groups_path, method: :get, class: 'btn btn-default btn-md' %>      
       <% end %><br><br> 
       <body>
     </div>

@@ -30,18 +30,7 @@
 
 .yield{
 	margin: auto;
-	width: 90%;
-}
-
-.background-image{
-	height:100%;
-  width:100%;
-  /* background-image: url('/assets/blue_flower.png'); */
-  background-repeat: no-repeat;
-  background-size:100%;
- 	background-position: center;
-  background-size: cover;
-  padding-top: 10px;
+	width: 90%
 }
 
 .btn-default{
@@ -49,6 +38,9 @@
 	padding-right: 10px;
 	padding-left: 10px;
 	padding-bottom: 10px;
+	font-family: Arial;
+	color: white;
+	background-color: #223C66;
 }
 
 .success {
@@ -106,18 +98,74 @@
 	table, th, td {
 		border: 5px solid black;
 		border-collapse: collapse;
-		padding: 10px;	
-	}
+		padding: 10px; }
 }
 
 .perfect-gift-footer {
 	text-align: right;
 	font-family: papyrus, fantasy;
 	font-weight: bold;
-	font-size: 30px;
-	color: black;
+	font-size: 24px;
+	color: #223C66;
+	padding-top: 20px;
 	padding-right: 25px;
-	padding-bottom: 15px;
+	padding-bottom: 7px;
+}
+
+.background-image {
+	height:100%;
+  width:100%;
+  /* background-image: url('/assets/blue_flower.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+ 	background-position: center;
+  background-size: cover;
+  padding-top: 10px;
+}
+
+.background-login {
+	height: auto;
+  width: auto;
+ 	background-image: url('/assets/floral-swirly-vector.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+ 	background-position: center;
+ 	background-color: beige;
+ 	border: 25px solid beige;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  padding-left: 200px;
+}
+
+.login-container {
+	border: 10px solid #223C66;
+	height:80%;
+  width:60%;
+  background-size:100%;
+ 	background-position: center;
+  background-size: cover;
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-left: 20px;	
+}
+
+.navbar-color {
+	height:100%;
+  width:100%;
+ 	background-color: #718AB2;
+ 	border: 5px solid #223C66;
+}
+
+body {
+	background-color: beige;	
+	background-size: cover;
+ 	background-position: cover;
+  background-repeat: no-repeat;
+}
+
+a {
+	color: #223C66;
 }
 
 
