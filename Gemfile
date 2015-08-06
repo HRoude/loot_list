@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,7 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'rails_12factor', group: :production
-gem 'pg', group: :production
+gem 'pg', group: :production  
+gem 'dotenv-rails'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -47,10 +49,12 @@ group :development, :test do
   # gem 'spring'
 
   gem 'quiet_assets'
-  gem 'dotenv-rails'
+
   gem "better_errors"
   gem "binding_of_caller"
   gem "awesome_print"
+
+  #gem 'sqlite3'
   
 end
 
