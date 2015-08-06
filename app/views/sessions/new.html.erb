@@ -1,11 +1,14 @@
 <div class="background-login responsive">
   <div class="login-container responsive">
-
+  
   <%= form_tag do %>
 
   <fieldset>
     <div class="row col-md-12">
-      <h3> Welcome to Loot-List </h3><br>
+      <div>
+        <img src="/assets/logo.png" style="height:80px;" class="img-responsive text-center">
+      </div><br>
+
   	  <%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
       <%=label_tag :email, 'Your Email' %><br><br>
 
@@ -22,8 +25,7 @@
 
       <p> Not a registered user?  <%= link_to 'REGISTER', home_path, class: 'btn btn-default btn-xs' %></p><br><br>
     
-      <%= link_to "FORGOT PASSWORD?", new_password_reset_path, class: 'btn btn-default btn-xs' %>
-   	
+      <%= link_to "FORGOT PASSWORD?", new_password_reset_path, class: 'btn btn-default btn-xs' %> 	
     </div>
   </fieldset>
 

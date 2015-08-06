@@ -1,13 +1,23 @@
 
 <h2><b> <%= @current_user.name %> belongs to these Groups : </b></h2><br>
 
-<p><b> 
-	Click on each Group Name if you want to edit or delete or add someone to this Group.<br> 
-	You can only do this if you are the one that created the Group.<br><br>
-</b></p>
-
+<div class="row">
+<div class="col-lg-12">
 <fieldset>
+	<div class="col-md-6 pull-right">
+    <div class="text-box">  
+    	<p><small>
+				ONLY group members may view each other's lists. <br>
+			</small></p>
+    </div>
+  </div>  	
+
+
 		<div class="user-group-list col-md-6 table-responsive">
+			<p><b> 
+				Click on each Name if you want to edit group, delete group or add someone to this Group.  You can only do this if you are the one that created the Group.
+			</b></p>  <br>
+
 			<table class="table table-bordered table-hover">
 			  <body>
 			  	<% @groups.each do |group| %>
@@ -37,12 +47,15 @@
 			 			</tr>
 			  	<% end %>
 				</body>  
-
 			</table>
+			<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
 		</div> 
-</fieldset>
 
-<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
+</fieldset>
+</div>
+</div>
+
+
 
 
 

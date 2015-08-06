@@ -18,7 +18,7 @@
 		  </tr>
 		  <% @user.items.each do |want| %>
 		  <tr>
-		    <td> 
+		    <td > 
 		    	<% if @current_user.id == @user.id %>
 			    	<%= link_to want.name, edit_user_item_path(@user, want) %> 
 			    <% else %>
@@ -29,9 +29,9 @@
 		    <td> <%= want.comment %> </td>	
 		    <td> <%= want.dislike %> </td>	
 		   	<td> <%= number_to_currency(want.price) %> </td>	
-
+		 
 		   	<td> <%= link_to want.url_link, want.url_link, :target => "_blank" %> </td>		
-		   	
+	
 
 		   	<td> <%= want.category %> </td>
 		   	<td> <%= want.want_rating %> </td>
@@ -44,7 +44,7 @@
 				</td>	
 		  </tr>
 		  <% end %>
-		</table><br>
+		</table>
 	</div> 
 </body>
 

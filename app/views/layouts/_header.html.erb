@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-default">
  
-  <div class="navbar-color container-fluid">  <!-- better mobile display -->
+  <div class="navbar-color container-fluid"> 
     <div class="navbar-header">  
 
       <% if session[:user_id] %>  
@@ -17,7 +17,7 @@
       <% else %>
         <%= link_to "YOUR PROFILE", user_path(@current_user), class: 'btn btn-default btn-md' %>
         <%= link_to "LOG OUT", logout_path, method: :delete, class: 'btn btn-default btn-md' %><br>
-        <%= @current_user.name %> is logged in  <br><br>
+        <b class="pull-right"><%= @current_user.name %> is logged in </b>
       <% end %>
 
     </div>   

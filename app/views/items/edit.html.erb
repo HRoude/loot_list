@@ -1,12 +1,20 @@
 
-<div class="text-right">
 
-<% if @current_user.id == @user.id %>
-	<h4><%= link_to 'Delete This Item', user_item_path(@user, @item), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'btn btn-default btn-md' %></h4>
-<% end %>
+<div class="row">
+
+	<div class="col-sm-3">
+		<h2> Edit This Item </h2>
+	</div>
+	
+	<div class="col-sm-3">
+		<% if @current_user.id == @user.id %>
+	    <%= link_to 'DELETE ITEM', user_item_path(@current_user, @item), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: 'btn btn-default btn-xs' %>    
+	  <% end %><br>
+	</div>
 
 </div>
 
-<h2> Edit This Item </h2>
-
 <%= render 'items/form' %>
+
+	
+
