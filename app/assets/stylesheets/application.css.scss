@@ -107,7 +107,7 @@
 	font-weight: bold;
 	font-size: 24px;
 	color: #223C66;
-	padding-top: 20px;
+	padding-top: 15px;
 	padding-right: 25px;
 	padding-bottom: 7px;
 }
@@ -115,7 +115,6 @@
 .background-image {
 	height:100%;
   width:100%;
-  /* background-image: url('/assets/blue_flower.png'); */
   background-repeat: no-repeat;
   background-size: cover;
  	background-position: center;
@@ -162,6 +161,7 @@
 }
 
 body {
+	color: #223C66;
 	background-color: beige;	
 	background-size: cover;
  	background-position: cover;
@@ -177,6 +177,36 @@ a {
 	width:90px;
 }
 
+.text-box {
+	border: 6px solid #223C66; 
+	font-family: Arial; 
+	font-size: 20px; 
+	color: #223C66;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+
+.register-text-box {
+	border: 6px solid #223C66; 
+	font-family: Arial; 
+	font-size: 18px; 
+	color: #223C66;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 15x;
+	padding-bottom: 10px;
+}
+.new-item {  
+	font-family: Arial; 
+	font-size: 15px; 
+	color: #223C66;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
 
 
 

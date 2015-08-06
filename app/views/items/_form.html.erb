@@ -1,39 +1,82 @@
 
-<div class="new-item">
+<div class="row">
+<div class="col-lg-12">
 
 <%= form_for([@current_user, @item]) do |f| %>
 
 <fieldset>
-   	<div class="row"><br>
-      <div class="col-md-8">
-      <b><%= f.label :name, 'Item Name' %></b><br>  
-      <%= f.text_field :name, size: "82", class:'form-control', :placeholder => 'This MUST be completed!' %><br>  
+  <div class="col-md-6 pull-right">
+    <div class="text-box">  
+      <p>
+        You only need to take a few minutes to add just 3 - 5 items to your Loot-List and share it.  
+      </p><br>
       
-      <b><%= f.label :descrip, 'Item Description' %></b><br>      
-      <%= f.text_area :descrip, size: "80x8", maxlength: "100", class:'form-control', :placeholder => 'Product details from manufacturer' %><br>
+      <p>  
+        Think baby steps and just add the basic information so someone that loves you can get you the perfect gift.  Think toddler steps and add many items and lots of details so you get a Loot of perfect gifts!
+      </p><br>  
 
-      <b><%= f.label :comment, 'Comments' %></b><br>
-      <%= f.text_area :comment, size: "80x8", maxlength: "150",class:'form-control', :placeholder => 'What size?  Color?  What details?' %><br>
-
-      <b><%= f.label :dislike, 'Dislikes' %></b><br>
-      <%= f.text_area :dislike, size: "80x8", maxlength: "150",class:'form-control', :placeholder => 'Must NOT be slimy!  Cannot stand anything cotton!' %><br>
-
-      <b><%= f.label :price, 'Estimated Price' %></b><br>
-      <%= f.number_field :price, size: "82", step:"any", min:"0", class:'form-control', :placeholder => 'Just a general idea of the cost' %><br>
-
-      <b><%= f.label :url_link, 'Web Link' %></b><br>
-      <%= f.text_area :url_link, size: "80x8", maxlength: "300", class:'form-control', :placeholder => 'Copy and Paste weblink from the item you want to here or enter your own beginning with https://www.' %><br>
+      <p>
+        <strong> Envision a VACATION </strong> —  Where?  How long?  When?  With whom?
+      </p><br> 
       
-      <%= render 'items/categories' %><br>
+      <p> 
+        <strong> Envision a nice DINNER </strong>  —  What restaurant?  Picnic?  Wine?  What occasion?
+      </p><br>
+      
+      <p>  
+        <strong> Envision a BOOK </strong>  — The next book in a series?  What subject do you want to learn?  
+      </p><br>
+      
+      <p>  
+        <strong> Envision FAVORS </strong>  —  Errands?  Babysitter? <br> What can someone do to make your life easier?  
+      </p><br>
+      
+      <p>  
+        <strong> Envision GIFT CARD </strong> —  Gas?  Manicure? <br> Golf lessons?  Spanish class?
+      </p><br>
+      
+      <p>  
+        <strong> Envision LIVE EVENT </strong> — What July 4th event? <br> What comedian do you want to see?   
+      </p><br>
 
-      <%= render 'items/ratings' %><br><br>
+      <p>
+        <strong> Envision DATE NIGHT </strong> — Tired of dinner each time?  How about a rock climbing venture?
+      </p><br>
+    </div>    
+  </div>
+ 	
+  <div class="col-md-6 pull-left">
+    <div class="new-item">
+    <b><%= f.label :name, 'Item Name' %></b>  
+    <%= f.text_field :name, size: "82", class:'form-control', :placeholder => 'This MUST be completed!' %><br>  
+    
+    <b><%= f.label :descrip, 'Item Description' %></b>    
+    <%= f.text_area :descrip, size: "80x8", maxlength: "100", class:'form-control', :placeholder => 'Product details from manufacturer' %><br>
 
-       <div class="actions">
+    <b><%= f.label :comment, 'Comments' %></b>
+    <%= f.text_area :comment, size: "80x8", maxlength: "150",class:'form-control', :placeholder => 'What size?  Color?  What details?' %><br>
+
+    <b><%= f.label :dislike, 'Dislikes' %></b>
+    <%= f.text_area :dislike, size: "80x8", maxlength: "150",class:'form-control', :placeholder => 'Must NOT be slimy!  Cannot stand anything cotton!' %><br>
+
+    <b><%= f.label :price, 'Estimated Price' %></b>
+    <%= f.number_field :price, size: "82", step:"any", min:"0", class:'form-control', :placeholder => 'Just a general idea of the cost' %><br>
+
+    <b><%= f.label :url_link, 'Web Link' %></b>
+    <%= f.text_area :url_link, size: "80x8", maxlength: "300", class:'form-control', :placeholder => 'Copy and Paste web address from the specific item you want' %><br>
+    
+    <%= render 'items/categories' %><br>
+
+    <%= render 'items/ratings' %><br><br>
+
+      <div class="actions">
         <%= f.submit 'SAVE ITEM', class: 'btn btn-default btn-xs'%>
-       </div>
       </div>
     </div>
+  </div>
 </fieldset>
 
+
 </div>
-<% end %><br>
+</div>
+<% end %>

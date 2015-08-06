@@ -9,11 +9,11 @@
 <%= render 'items/index' %>
 
 <% if @current_user.id == @user.id %>
-	<%= link_to "ADD TO LOOT-LIST", new_user_item_path, class: 'btn btn-default btn-sm' %><br><br>
+	<%= link_to "ADD TO LOOT-LIST", new_user_item_path(@current_user, @item), class: 'btn btn-default btn-sm' %><br><br>
 
-<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>
+	<%= link_to "MAKE A GROUP", new_group_path, class: 'btn btn-default btn-sm' %><br><br>	
 <% end %>
 
-<%= link_to "VIEW YOUR GROUPS", groups_path, class: 'btn btn-default btn-sm' %><br><br>
+<%= link_to "VIEW YOUR GROUPS", groups_path, class: 'btn btn-default btn-sm' %>
 
 

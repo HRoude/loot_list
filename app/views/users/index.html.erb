@@ -1,39 +1,75 @@
-<center>
-<h1> Welcome to Loot-List! </h1><br><br>
-  <P> Just last week somewhere in this world, a wife asked her husband what he would like for his birthday.  Not expecting anything more than the usual response.....</P><br>
+<div>
+  <img src="/assets/logo.png" style="height:130px;margin:auto;" class="img-responsive text-center">
+</div>
 
-  <p> This usual response is sweet and just what a wife wants to hear (not in this case!)....</p><br>
+<div class="col-md-12">
+  <div class="register-text-box text-center"> 
+    <p>
+      Have you ever received a gift that you absolutely detest? <br><br>
+    </p> 
+    
+    <p>
+      Thrown on a big phenomenal smile and say thank you, all the while thinking if it’s able to be returned? <br><br>
+    </p>
 
-  <p> Herein lies the perfect solution......private, secure, available to loved ones, family, friends....form groups...  Info always there and easily updated to</p><br>
+    <p>
+      Have you ever asked your spouse what they would like for their birthday and get the response, <br> “I have you and I don’t need anything else?"  Even though that response might make your heart flutter happily, <br> in reality, you are back to square one with no clue what to get them. <br><br>
+    </p>
 
-  <p> This is not just any wish list you find out there....more personalized.   It has vacation options, favorite activities, preferred charities and even what someone does NOT LIKE.....</p><br><br><br>
-</center>
+    <p>
+      Have you ever had a niece or nephew graduating high school in a far away place and have no clue what to get them? <br><br>
+    </p>
 
-<div class="user_form">
+    <p>
+      Everyone loves gifts.  Everyone loves gifts that they really want even more. <br>
+      Loot-List is here to bring together your idea of the perfect gift with the reality of actually receiving it!  <br><br>
+    </p>
+
+    <p>
+     Loot-Lists details what you DO NOT EVER want to receive and what features you dislike on an item. <br><br>
+    </p>
+
+    <p>
+      Loot-List is different than most wish lists, as it includes things like ....<br>
+      vacations ✦ educational items ✦ restaurants ✦ charities <br>
+      live events ✦ date nights <i><small>(yes, even those!)</small></i> <br><br>
+    </p>
+
+    <p> 
+      You can share your Loot-List securely with other members of your group, where the perfect gift idea is just a click away
+    </p> 
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+
   <%= form_for(@user) do |f| %>
-  <fieldset><center>
-    <h4><b> PLEASE REGISTER TO CREATE A WISH LIST OR VIEW A WISH LIST </b></h4><br>
-    <div class="row">
-      <div class="col-md-4 col-md-4 col-md-offset-4">
-        <%= f.text_field :name, size: 60, class:'form-control', :placeholder => 'must be completed' %>
-        <%= f.label :name, 'Your Name' %><br><br>
+  
+  <fieldset><br><br>
+    <h4><b> PLEASE REGISTER TO GET STARTED </b></h4>
+   
+      <%= f.text_field :name, size: 60, class:'form-control', :placeholder => 'must be completed' %>
+      <%= f.label :name, 'Your Name' %><br><br>
 
-        <%= f.email_field :email, size: 60, class:'form-control', :placeholder => 'must be completed' %>
-         <%= f.label :email, 'Your Email' %><br><br>
+      <%= f.email_field :email, size: 60, class:'form-control', :placeholder => 'must be completed' %>
+       <%= f.label :email, 'Your Email' %><br><br>
 
-        <%= f.password_field :password, size: 60, class:'form-control', :placeholder => 'must be completed' %>
-        <%= f.label :password, 'Your Password' %><br><br>
+      <%= f.password_field :password, size: 60, class:'form-control', :placeholder => 'must be completed' %>
+      <%= f.label :password, 'Your Password' %><br><br>
 
-        <%= f.password_field :password_confirmation, size: 60, class:'form-control', :placeholder => 'must be completed' %>
-          <%= f.label :password_confirmation, 'Please Confirm Password' %>
-        <br><br>
-       <div class="actions">
-        <%= f.submit 'REGISTER', class: 'btn btn-default btn-xs' %><br><br>
-       </div>
-     </div>
-    </div>
-    </fieldset></center>
+      <%= f.password_field :password_confirmation, size: 60, class:'form-control', :placeholder => 'must be completed' %>
+      <%= f.label :password_confirmation, 'Confirm Your Password' %><br>
+      
+     <div class="actions">
+      <%= f.submit 'REGISTER', class: 'btn btn-default btn-xs' %>
+     </div>   
+  </fieldset>
+
   <% end %>
 </div>
+</div>
+
+
 
 
