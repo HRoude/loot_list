@@ -112,9 +112,16 @@
 	padding-bottom: 7px;
 }
 
+.kids-holding-box {
+	width:	270px;
+	height: 170px;
+	padding-right: 10px;
+	margin-right: 2.5cm;
+}
+
 .background-image {
-	height:100%;
-  width:100%;
+	height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
  	background-position: center;
@@ -125,7 +132,7 @@
 .background-login {
 	height: auto;
   width: auto;
- 	background-image: url('/assets/floral-swirly-vector.png');
+ 	background-image: image_path('floral-swirly-vector.png');
   background-repeat: no-repeat;
   background-size: cover;
  	background-position: center;

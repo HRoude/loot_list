@@ -6,9 +6,11 @@
   <fieldset>
     <div class="row col-md-12">
       <div>
-        <img src="/assets/logo.png" style="height:80px;" class="img-responsive text-center">
-      </div><br>
+        <%= image_tag("logo.png", alt: "image", height: "80px", class:'img-responsive text-center') %><br>
 
+       <!--  <img src="/assets/logo.png" style="height:80px;" class="img-responsive text-center">
+      </div><br>
+ -->
   	  <%=text_field_tag :email, params[:email], class:'form-control', size: 50 %>
       <%=label_tag :email, 'Your Email' %><br><br>
 
